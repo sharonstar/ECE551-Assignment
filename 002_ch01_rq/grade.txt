@@ -1,11 +1,12 @@
-Grading at 08/31/2022:03:08:34.410369
-For commit ID 34b3f4543a4974ad96ab933ba16b30dc9f4cb3fa
-Grading at Tue Aug 30 11:08:34 PM EDT 2022
+Grading at 08/31/2022:03:54:57.940016
+For commit ID 499360292f7a1b7b2a56a743135320f2cc480d25
+Grading at Tue Aug 30 11:54:57 PM EDT 2022
 Reading your quiz answers from answers.txt
-You got 2 questions incorrect.
+You got 3 questions incorrect.
 You might want to review these concepts:
 ------------
 How to approach developing an algorithm
+How to test an algorithm
 The basic ideas of algorithms
 ------------
 
