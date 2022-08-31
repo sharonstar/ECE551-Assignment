@@ -1,13 +1,12 @@
-Grading at 08/31/2022:02:25:20.578396
-For commit ID 8f0c20f1d6b64213c47c24cc4ddf3903b4af37c8
-Grading at Tue Aug 30 10:25:20 PM EDT 2022
+Grading at 08/31/2022:02:57:19.615565
+For commit ID b47411847174556e7b258cdd07630ddcfc49a118
+Grading at Tue Aug 30 10:57:19 PM EDT 2022
 Reading your quiz answers from answers.txt
-You got 4 questions incorrect.
+You got 2 questions incorrect.
 You might want to review these concepts:
 ------------
 How to approach developing an algorithm
 How to test an algorithm
-The basic idea of testing an algorithm
 ------------
 
 Overall Grade: FAILED
