@@ -1,12 +1,6 @@
-Grading at 09/02/2022:02:28:52.131952
-For commit ID 203cd26b13e84786fbf8f1debc9afb9e51fc0234
-Grading at Thu Sep  1 10:28:51 PM EDT 2022
+Grading at 09/02/2022:02:35:13.734755
+For commit ID bface97c84f435259b7c337160f8cab6bf8c10a4
+Grading at Thu Sep  1 10:35:13 PM EDT 2022
 Reading your quiz answers from answers.txt
-You got 2 questions incorrect.
-You might want to review these concepts:
-------------
-The basic syntax of C
-What is an assignment
-------------
 
-Overall Grade: FAILED
+Overall Grade: PASSED
