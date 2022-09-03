@@ -4,7 +4,6 @@ This is a reading code problem.
 
 (2) Execute the following code by hand (as you learned in Chapter 2),
     and write the output in your "answer.txt" file.
-
 int main(void) {
   int a = 3;
   int b = 9;
@@ -25,5 +24,4 @@ int main(void) {
 }
 
 //end of code
-
 (3) Submit your answer.txt file for grading.
