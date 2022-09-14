@@ -19,6 +19,6 @@ int main(void) {
   run_check(1, 2, 1);
   run_check(2, 4, 16);
   run_check(0, 0, 1);
-  run_check(3, -2, 0);
+  run_check(-2, 3, -8);
   return EXIT_SUCCESS;
 }
