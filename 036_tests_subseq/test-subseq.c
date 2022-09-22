@@ -21,6 +21,8 @@ int main(void) {
   int arr5[5] = {4, 3, 3, 4, 5};
   int arr6[1] = {1};
   int arr7[4] = {-1, -2, 1, 2};
+  int arr8[3] = {1, 2, 3};
+  int arr9[2] = {1, 2};
 
   run(arr1, 3, 1);
   run(arr2, 10, 4);
@@ -30,5 +32,7 @@ int main(void) {
   run(arr6, 1, 1);
   run(arr7, 4, 3);
   run(NULL, 0, 0);
+  run(arr8, 3, 3);
+  run(arr9, 2, 2);
   return EXIT_SUCCESS;
 }
