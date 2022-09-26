@@ -9,10 +9,10 @@ f
 e
 c
 g
-g
+f
 a
 d
 c
 b
 c
-b
+c
