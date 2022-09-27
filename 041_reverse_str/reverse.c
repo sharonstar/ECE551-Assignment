@@ -4,13 +4,15 @@
 
 void reverse(char * str) {
   int j = strlen(str) - 1;  // str2 3
-  int i = 0;
-  while (i < j) {
-    char temp = str[i];
-    str[i] = str[j];
-    str[j] = temp;
-    i++;
-    j--;
+  if (j >= 0) {
+    int i = 0;
+    while (i < j) {
+      char temp = str[i];
+      str[i] = str[j];
+      str[j] = temp;
+      i++;
+      j--;
+    }
   }
 }
 
