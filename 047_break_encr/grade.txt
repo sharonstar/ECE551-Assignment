@@ -1,0 +1,17 @@
+Grading at 09/30/2022:16:09:57.366336
+For commit ID df8a00779672b5e23b0c992559405dfa964f441c
+Grading at Fri Sep 30 12:09:53 PM EDT 2022
+Attempting to compile breaker.c 
+gcc -Wall -Werror -pedantic -std=gnu99 -o breaker breaker.c
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
+
+Overall Grade: A
