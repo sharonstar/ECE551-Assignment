@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void rotate(char array[][10], char ans[][10]) {
+void rotate(int array[][10], int ans[][10]) {
   for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 10; j++) {
       ans[i][j] = array[9 - j][i];
@@ -18,7 +18,7 @@ int main(int argc, char ** argv) {
     perror("could not open");
     return EXIT_FAILURE;
   }
-  char array[10][10];
+  int array[10][10];
   char line[12];
   int linenum = 0;
   while (fgets(line, 12, f) != NULL) {
@@ -37,7 +37,7 @@ int main(int argc, char ** argv) {
     perror("failed to close");
     return EXIT_FAILURE;
   }
-  char ans[10][10];
+  int ans[10][10];
   rotate(array, ans);
   for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 10; j++) {
