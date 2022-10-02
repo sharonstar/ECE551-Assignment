@@ -26,12 +26,22 @@ int main(int argc, char ** argv) {
       fprintf(stderr, "the line has more than 10 characters");
       return EXIT_FAILURE;
     }
+    if (strlen(line) != 11) {
+      fprintf(stderr, "the line has less than 10 characters");
+      return EXIT_FAILURE;
+    }
     if (linenum == 10) {
       fprintf(stderr, "this txt has more than 10 lines");
       return EXIT_FAILURE;
     }
-    memcpy(array[linenum], line, sizeof(char) * 10);
+    for (int i = 0; i < 10; i++) {
+      array[linenum][i] = line[i];
+    }
     linenum += 1;
+  }
+  if (linenum < 10) {
+    fprintf(stderr, "this txt has less than 10 lines");
+    return EXIT_FAILURE;
   }
   if (fclose(f) != 0) {
     perror("failed to close");
