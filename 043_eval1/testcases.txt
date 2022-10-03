@@ -1,4 +1,4 @@
-#sucess
+#success
 printCountries population.csv
 printCumulative population.csv daily_small.csv
 printRunningAvg population.csv daily_small.csv
