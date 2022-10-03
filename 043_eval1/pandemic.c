@@ -27,7 +27,7 @@ country_t parseLine(char * line) {
 }
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
-  for (size_t i = 0; i < n_days - 5; i++) {
+  for (size_t i = 0; i < n_days - 6; i++) {
     unsigned sum = 0;
     for (size_t j = i; j < i + 7; j++) {
       sum += data[j];
@@ -57,15 +57,14 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
-  for (size_t i = 0; i < n_days; i++) {
-    unsigned array[n_countries];
-    for (size_t j = 0; j < n_countries; j++) {
-      array[j] = data[j][i];
-    }
-    int largestIndex = LargestIndex(array, n_countries);
-    unsigned number_cases = array[largestIndex];
-    printf("%s has the most daily cases with %u\n",
-           countries[largestIndex].name,
-           number_cases);
+  unsigned array[n_countries];
+  for (size_t i = 0; i < n_countries; i++) {
+    int largest_case_number = LargestIndex(data[i], n_days);
+    array[i] = data[i][largest_case_number];
   }
+  int largest_country_index = LargestIndex(array, n_countries);
+  unsigned number_cases = array[largest_country_index];
+  printf("%s has the most daily cases with %u\n",
+         countries[largest_country_index].name,
+         number_cases);
 }
