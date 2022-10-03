@@ -5,6 +5,11 @@
 #include <string.h>
 
 country_t parseLine(char * line) {
+  if (line == NULL) {
+    fprintf(stderr, "This line does not have country and population.");
+    exit(EXIT_FAILURE);
+  }
+  // initialize a country_t named ans
   char name[64] = {0};
   country_t ans;
   for (int i = 0; i < 64; i++) {
@@ -12,8 +17,15 @@ country_t parseLine(char * line) {
   }
   char * split = strchr(line, ',');
   if (split == NULL) {
-    fprintf(stderr, "wrong input");
+    fprintf(stderr, "Wrong input: there is no comma.");
     exit(EXIT_FAILURE);
+  }
+  // determine whether population is legal
+  for (int i = 1; split[i] != '\n'; i++) {
+    if (split[i] < '0' && split[i] > '9') {
+      fprintf(stderr, "Wrong input: population is not an integer.");
+      exit(EXIT_FAILURE);
+    }
   }
   ans.population = atoi(&split[1]);
   for (int i = 0; line[i] != ','; i++) {

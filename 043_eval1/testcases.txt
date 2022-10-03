@@ -6,3 +6,7 @@ printDailyMax population.csv daily_small.csv
 printCumulative population.csv daily_cases.csv
 printRunningAvg population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv
+#error
+printCountries nonexist.csv
+printCountries
+printCountries
