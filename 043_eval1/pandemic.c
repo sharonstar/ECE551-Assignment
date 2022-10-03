@@ -21,12 +21,13 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   // determine whether population is legal
+  /*
   for (int i = 1; split[i] != '\n'; i++) {
     if (split[i] < '0' && split[i] > '9') {
       fprintf(stderr, "Wrong input: population is not an integer.");
       exit(EXIT_FAILURE);
     }
-  }
+    } */
   ans.population = atoi(&split[1]);
   for (int i = 0; line[i] != ','; i++) {
     if (i == 64) {
