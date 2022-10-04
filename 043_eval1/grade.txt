@@ -1,6 +1,6 @@
-Grading at 10/04/2022:20:20:13.164466
-For commit ID 42cdc1b24b17a8646626599404d4978013358708
-Grading at Tue Oct  4 04:20:06 PM EDT 2022
+Grading at 10/04/2022:20:31:29.550003
+For commit ID 3424168d94c114833d762162302d6a9c99c2b67d
+Grading at Tue Oct  4 04:31:22 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -22,12 +22,6 @@ Your file matched the expected output
 Test case printDailyMax population.csv daily_cases.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries vaildcase1space.csv
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Your file did not match the expected ouput
-+-----------------------------------------------------------------------+
 Test case printCountries vaildcase2pop0.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
@@ -39,6 +33,16 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invaildcase3space.csv
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invaild4junk.csv
+brazil: 0
+Your program did not indicate a failure case
++-----------------------------------------------------------------------+
+Test case printCountries vaildcase1space.csv
+china: 12
+usa: 13
+uk: 11
+Your program did not indicate a failure case
 
 You have FAILED one or more of your test cases
 Keep debugging
