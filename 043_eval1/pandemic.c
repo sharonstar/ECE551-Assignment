@@ -30,6 +30,10 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   ans.population = atol(&split[1]);
+  if (ans.population == 0) {
+    fprintf(stderr, "pop can not be 0");
+    exit(EXIT_FAILURE);
+  }
   int mark;
   for (int i = 0; line[i] != ','; i++) {
     if (i == 63) {
