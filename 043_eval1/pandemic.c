@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 country_t parseLine(char * line) {
   if (line == NULL) {
     fprintf(stderr, "This line does not have country and population.");
@@ -26,11 +25,10 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Wrong input: have more than one comma.");
     exit(EXIT_FAILURE);
   }
-  /*
   if (atol(&split[1]) == 0) {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
-    } */
+  }
   ans.population = atol(&split[1]);
   int mark;
   for (int i = 0; line[i] != ','; i++) {
