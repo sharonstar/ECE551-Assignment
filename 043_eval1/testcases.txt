@@ -3,9 +3,10 @@ printCountries population.csv
 printCumulative population.csv daily_cases.csv
 printRunningAvg population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv
-printCountries vaildcase1space.csv
 printCountries vaildcase2pop0.csv
 #error
 printCountries nonexist.csv
 printCountries invaild2twocomma.csv
 printCountries invaildcase3space.csv
+printCountries invaild4junk.csv
+printCountries vaildcase1space.csv

@@ -27,11 +27,11 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   /*
-  if (atoi(&split[1]) == 0) {
+  if (atol(&split[1]) == 0) {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
     } */
-  ans.population = atoi(&split[1]);
+  ans.population = atol(&split[1]);
   int mark;
   for (int i = 0; line[i] != ','; i++) {
     if (i == 63) {
