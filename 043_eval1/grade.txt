@@ -1,6 +1,6 @@
-Grading at 10/04/2022:20:40:43.457998
-For commit ID 185f05353ef315c59c61f9d66d42b0367e44b75f
-Grading at Tue Oct  4 04:40:36 PM EDT 2022
+Grading at 10/04/2022:20:50:12.822819
+For commit ID 3cbba5c86f207966e2cb6965684cf0cc26108cc9
+Grading at Tue Oct  4 04:50:06 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -28,10 +28,6 @@ Line_2_did_not_match
 Line_3_did_not_match
 Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
-Test case printCountries vaildcase2pop0.csv
-Line_1_did_not_match
-Your file did not match the expected ouput
-+-----------------------------------------------------------------------+
 Test case printCountries nonexist.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
@@ -43,6 +39,9 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invaild4junk.csv
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries vaildcase2pop0.csv
+Our printCountries does not consider this an error case
 
 You have FAILED one or more of your test cases
 Keep debugging
