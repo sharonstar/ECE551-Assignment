@@ -26,10 +26,11 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Wrong input: have more than one comma.");
     exit(EXIT_FAILURE);
   }
+  /*
   if (atoi(&split[1]) == 0) {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
-  }
+    } */
   ans.population = atoi(&split[1]);
   int mark;
   for (int i = 0; line[i] != ','; i++) {
@@ -46,8 +47,7 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
-    fprintf(stderr, "n_days should be larger than 6.");
-    exit(EXIT_FAILURE);
+    exit(EXIT_SUCCESS);
   }
   for (size_t i = 0; i < n_days - 6; i++) {
     unsigned sum = 0;
