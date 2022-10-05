@@ -29,11 +29,18 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Wrong input: have more than one comma.");
     exit(EXIT_FAILURE);
   }
-  if (atol(&split[1]) == 0) {
+  char * ptr;
+  if (strtol(&split[1], &ptr, 10) == 0 && ptr == NULL) {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
   }
-  ans.population = atol(&split[1]);
+  /*
+    if (atol(&split[1]) == 0) {
+    fprintf(stderr, "Wrong input: population is not a vaild number.");
+    exit(EXIT_FAILURE);
+  }
+    */
+  ans.population = strtol(&split[1], &ptr, 10);
   int mark;
   // name should be less than 64 characters
   for (int i = 0; line[i] != ','; i++) {
