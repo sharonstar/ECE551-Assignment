@@ -30,7 +30,8 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   char * ptr;
-  if (strtol(&split[1], &ptr, 10) == 0 && *ptr != '\0') {
+  ans.population = strtol(&split[1], &ptr, 10);
+  if (*ptr != '\0') {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
   }
@@ -40,7 +41,7 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
     */
-  ans.population = strtol(&split[1], &ptr, 10);
+
   int mark;
   // name should be less than 64 characters
   for (int i = 0; line[i] != ','; i++) {
