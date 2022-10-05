@@ -31,7 +31,7 @@ country_t parseLine(char * line) {
   }
   char * ptr;
   ans.population = strtol(&split[1], &ptr, 10);
-  if (*ptr != '\0') {
+  if (*ptr != '\n' && *ptr != '\0') {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
   }
