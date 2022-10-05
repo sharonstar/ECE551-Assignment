@@ -30,7 +30,7 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   char * ptr;
-  if (strtol(&split[1], &ptr, 10) == 0 && ptr == NULL) {
+  if (strtol(&split[1], &ptr, 10) == 0 && *ptr != '\0') {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
   }
