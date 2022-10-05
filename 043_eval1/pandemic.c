@@ -35,13 +35,6 @@ country_t parseLine(char * line) {
     fprintf(stderr, "Wrong input: population is not a vaild number.");
     exit(EXIT_FAILURE);
   }
-  /*
-    if (atol(&split[1]) == 0) {
-    fprintf(stderr, "Wrong input: population is not a vaild number.");
-    exit(EXIT_FAILURE);
-  }
-    */
-
   int mark;
   // name should be less than 64 characters
   for (int i = 0; line[i] != ','; i++) {
