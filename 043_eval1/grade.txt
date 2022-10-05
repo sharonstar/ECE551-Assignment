@@ -1,6 +1,6 @@
-Grading at 10/05/2022:19:22:44.636242
-For commit ID 4a03e7e3183ea2c56b744b0f15e5cc5f7808783d
-Grading at Wed Oct  5 03:22:37 PM EDT 2022
+Grading at 10/05/2022:19:26:39.205648
+For commit ID de224d0a34ba49d9dab2342792e7e8e8eb06de70
+Grading at Wed Oct  5 03:26:32 PM EDT 2022
 
 Compiling 
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -11,19 +11,24 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Running your test cases
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_cases.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries vaildcase1space.csv
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected ouput
 +-----------------------------------------------------------------------+
 Test case printCountries vaildcase2pop0.csv
 Line_1_did_not_match
