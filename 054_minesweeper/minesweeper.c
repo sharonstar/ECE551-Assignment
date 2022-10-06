@@ -47,7 +47,7 @@ board_t * makeBoard(int w, int h, int numMines) {
   newBoard->totalMines = numMines;
   newBoard->board = malloc(h * sizeof(*newBoard->board));
   for (int i = 0; i < h; i++) {
-    newBoard->board[i] = realloc(newBoard->board[i], w * sizeof(newBoard->board[i]));
+    newBoard->board[i] = malloc(w * sizeof(newBoard->board[i]));
   }
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < w; j++) {
