@@ -1,8 +1,14 @@
+#include "outname.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "outname.h"
 
 char * computeOutputFileName(const char * inputName) {
-  //WRITE ME
+  const char * outsuffix = ".counts";
+  int len = strlen(inputName) + 8;
+  char * output = malloc(len * sizeof(*output));
+  strcpy(output, inputName);
+  strcat(output, outsuffix);
+  return output;
 }
