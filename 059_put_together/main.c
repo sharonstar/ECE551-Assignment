@@ -51,7 +51,9 @@ int main(int argc, char ** argv) {
     }
     printCounts(c, f);
     //close f
-    assert(fclose(f) == 0);
+    if (fclose(f) != 0) {
+      fprintf(stderr, "could not close");
+    }
     //free the memory for outName and c
     free(outName);
     freeCounts(c);
