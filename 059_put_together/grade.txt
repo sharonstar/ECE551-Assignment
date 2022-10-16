@@ -1,6 +1,6 @@
-Grading at 10/16/2022:16:35:20.407354
-For commit ID 3ebda4cf5c58e76b0c16d44c6e35cb634f8541a0
-Grading at Sun Oct 16 12:35:15 PM EDT 2022
+Grading at 10/16/2022:16:40:18.678966
+For commit ID 14ff7f063e2d1deacff0fafeec909300f3223ce3
+Grading at Sun Oct 16 12:40:14 PM EDT 2022
 Attempting to compile:
 rm -f  counts.o  kv.o  main.o  outname.o count_values *~
 gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 counts.c
@@ -19,34 +19,8 @@ Your output is correct
 Comparing file list1b.txt.counts with answer
 Your file matched the expected output
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==2675940== Memcheck, a memory error detector
-==2675940== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2675940== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2675940== 
-==2675940== Parent PID: 2675938
-==2675940== 
-==2675940== 
-==2675940== HEAP SUMMARY:
-==2675940==     in use at exit: 1,112 bytes in 152 blocks
-==2675940==   total heap usage: 441 allocs, 289 frees, 119,984 bytes allocated
-==2675940== 
-==2675940== 1,112 bytes in 152 blocks are definitely lost in loss record 1 of 1
-==2675940==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2675940==    by 0x490B60E: strdup (strdup.c:42)
-==2675940==    by 0x109B8D: countFile (main.c:23)
-==2675940==    by 0x109CBA: main (main.c:43)
-==2675940== 
-==2675940== LEAK SUMMARY:
-==2675940==    definitely lost: 1,112 bytes in 152 blocks
-==2675940==    indirectly lost: 0 bytes in 0 blocks
-==2675940==      possibly lost: 0 bytes in 0 blocks
-==2675940==    still reachable: 0 bytes in 0 blocks
-==2675940==         suppressed: 0 bytes in 0 blocks
-==2675940== 
-==2675940== For lists of detected and suppressed errors, rerun with: -s
-==2675940== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase3:
 Your file matched the expected output
@@ -58,66 +32,14 @@ Your output is correct
 Comparing file list2c.txt.counts with answer
 Your file matched the expected output
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==2675961== Memcheck, a memory error detector
-==2675961== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2675961== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2675961== 
-==2675961== Parent PID: 2675960
-==2675961== 
-==2675961== 
-==2675961== HEAP SUMMARY:
-==2675961==     in use at exit: 1,160 bytes in 143 blocks
-==2675961==   total heap usage: 397 allocs, 254 frees, 127,493 bytes allocated
-==2675961== 
-==2675961== 1,160 bytes in 143 blocks are definitely lost in loss record 1 of 1
-==2675961==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2675961==    by 0x490B60E: strdup (strdup.c:42)
-==2675961==    by 0x109B8D: countFile (main.c:23)
-==2675961==    by 0x109CBA: main (main.c:43)
-==2675961== 
-==2675961== LEAK SUMMARY:
-==2675961==    definitely lost: 1,160 bytes in 143 blocks
-==2675961==    indirectly lost: 0 bytes in 0 blocks
-==2675961==      possibly lost: 0 bytes in 0 blocks
-==2675961==    still reachable: 0 bytes in 0 blocks
-==2675961==         suppressed: 0 bytes in 0 blocks
-==2675961== 
-==2675961== For lists of detected and suppressed errors, rerun with: -s
-==2675961== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase4:
 Your file matched the expected output
 Comparing file list3a.txt.counts with answer
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==2675980== Memcheck, a memory error detector
-==2675980== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2675980== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2675980== 
-==2675980== Parent PID: 2675979
-==2675980== 
-==2675980== 
-==2675980== HEAP SUMMARY:
-==2675980==     in use at exit: 21,533 bytes in 125 blocks
-==2675980==   total heap usage: 332 allocs, 207 frees, 261,872 bytes allocated
-==2675980== 
-==2675980== 21,533 bytes in 125 blocks are definitely lost in loss record 1 of 1
-==2675980==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2675980==    by 0x490B60E: strdup (strdup.c:42)
-==2675980==    by 0x109B8D: countFile (main.c:23)
-==2675980==    by 0x109CBA: main (main.c:43)
-==2675980== 
-==2675980== LEAK SUMMARY:
-==2675980==    definitely lost: 21,533 bytes in 125 blocks
-==2675980==    indirectly lost: 0 bytes in 0 blocks
-==2675980==      possibly lost: 0 bytes in 0 blocks
-==2675980==    still reachable: 0 bytes in 0 blocks
-==2675980==         suppressed: 0 bytes in 0 blocks
-==2675980== 
-==2675980== For lists of detected and suppressed errors, rerun with: -s
-==2675980== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: C
+Overall Grade: B
