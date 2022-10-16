@@ -8,7 +8,6 @@ char * computeOutputFileName(const char * inputName) {
   const char * outsuffix = ".counts";
   int len = strlen(inputName) + 8;
   char * output = malloc(len * sizeof(*output));
-  strcpy(output, inputName);
-  strcat(output, outsuffix);
+  snprintf(output, len, "%s%s", inputName, outsuffix);
   return output;
 }
