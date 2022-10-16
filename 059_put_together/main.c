@@ -20,7 +20,7 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
     if (pointer != NULL) {
       *pointer = '\0';
     }
-    const char * key = strdup(line);
+    const char * key = line;
     char * value = lookupValue(kvPairs, key);
     addCount(c, value);
   }
