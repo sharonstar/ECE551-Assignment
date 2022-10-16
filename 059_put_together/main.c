@@ -46,6 +46,9 @@ int main(int argc, char ** argv) {
     //open the file named by outName (call that f)
     FILE * f = fopen(outName, "w");
     //print the counts from c into the FILE f
+    if (f == NULL) {
+      fprintf(stderr, "Could not open the file.");
+    }
     printCounts(c, f);
     //close f
     assert(fclose(f) == 0);
