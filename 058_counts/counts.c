@@ -15,7 +15,6 @@ void addCount(counts_t * c, const char * name) {
   if (name == NULL) {
     c->countArray[0].str = "<unknown>";
     c->countArray[0].num++;
-    // printf("%lx\n", c->countArray[0].num);
     return;
   }
   for (size_t i = 1; i < c->numStr; i++) {
