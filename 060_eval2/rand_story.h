@@ -6,6 +6,8 @@
 #include <string.h>
 
 #include "provided.h"
-//any functions you want your main to use
+
 void exitFail(const char * message);
+void readStoryLine(char * line, char ** catNameArray, catarray_t * cats, size_t n);
+
 #endif
