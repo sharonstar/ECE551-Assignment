@@ -27,7 +27,6 @@ int main(int argc, char ** argv) {
     exitFail("Could not open the story template file.");
   }
   category_t * usedWord = malloc(sizeof(*usedWord));
-  // free useWord
   usedWord->name = NULL;
   usedWord->n_words = 0;
   usedWord->words = NULL;
