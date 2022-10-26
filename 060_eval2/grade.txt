@@ -1,6 +1,6 @@
-Grading at 10/26/2022:06:46:44.016502
-For commit ID c68f1a6e5dd36f52a25fae17ad824191c2c53a07
-Grading at Wed Oct 26 02:46:36 AM EDT 2022
+Grading at 10/26/2022:18:22:58.659317
+For commit ID 6e7ff1a988cad98aa9978d4e9f25ad2455a2eed0
+Grading at Wed Oct 26 02:22:50 PM EDT 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -13,14 +13,16 @@ rm story-step1.o
 The code compiled (good)
 Executable story-step1 exists (good)
 Checking with provided test case story.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
 Now running YOUR tests for step 1
 
 1.1: Current test is story-step1 story.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 1.2: Current test is story-step1 storye1.txt
 -----------------------------
@@ -30,27 +32,48 @@ Valgrind was clean
 
 1.3: Current test is story-step1 storye2.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 1.4: Current test is story-step1 storye3.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 1.5: Current test is story-step1 storye4.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean
+You considered this a failure case:
+timeout: the monitored command dumped core
+But we did not.
 
 1.6: Current test is story-step1 storye5.txt  
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
-Valgrind was clean
+Valgrind reported errors:
+==3215607== Memcheck, a memory error detector
+==3215607== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3215607== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3215607== Command: ./story-step1 storye5.txt
+==3215607== Parent PID: 3215606
+==3215607== 
+==3215607== Invalid free() / delete / delete[] / realloc()
+==3215607==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3215607==    by 0x109EAA: readStoryLine (rand_story.c:145)
+==3215607==    by 0x1094A0: main (story-step1.c:21)
+==3215607==  Address 0x10b0e5 is in a r-- mapped file /home/ece551db/graderbase/work/sm957.060_eval2.VEXMYm/story-step1 segment
+==3215607== 
+==3215607== 
+==3215607== HEAP SUMMARY:
+==3215607==     in use at exit: 610 bytes in 4 blocks
+==3215607==   total heap usage: 8 allocs, 5 frees, 4,728 bytes allocated
+==3215607== 
+==3215607== For a detailed leak analysis, rerun with: --leak-check=full
+==3215607== 
+==3215607== For lists of detected and suppressed errors, rerun with: -s
+==3215607== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 Step 2
 Checking that story-step2 compiles
@@ -91,85 +114,36 @@ Now running YOUR tests for step 3
 Your output looks good. Lets check valgrind
   - Valgrind reported errors
 Valgrind reported errors or memory leaks:
-==2326521== Memcheck, a memory error detector
-==2326521== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2326521== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2326521== Command: ./story-step3 words.txt story2.txt
-==2326521== Parent PID: 2326520
-==2326521== 
-==2326521== 
-==2326521== HEAP SUMMARY:
-==2326521==     in use at exit: 24 bytes in 1 blocks
-==2326521==   total heap usage: 83 allocs, 82 frees, 14,912 bytes allocated
-==2326521== 
-==2326521== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==2326521==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2326521==    by 0x109497: main (story-step3.c:18)
-==2326521== 
-==2326521== LEAK SUMMARY:
-==2326521==    definitely lost: 24 bytes in 1 blocks
-==2326521==    indirectly lost: 0 bytes in 0 blocks
-==2326521==      possibly lost: 0 bytes in 0 blocks
-==2326521==    still reachable: 0 bytes in 0 blocks
-==2326521==         suppressed: 0 bytes in 0 blocks
-==2326521== 
-==2326521== For lists of detected and suppressed errors, rerun with: -s
-==2326521== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==3215803== Memcheck, a memory error detector
+==3215803== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3215803== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3215803== Command: ./story-step3 words.txt story2.txt
+==3215803== Parent PID: 3215802
+==3215803== 
+==3215803== 
+==3215803== HEAP SUMMARY:
+==3215803==     in use at exit: 24 bytes in 1 blocks
+==3215803==   total heap usage: 90 allocs, 89 frees, 14,961 bytes allocated
+==3215803== 
+==3215803== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==3215803==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3215803==    by 0x109497: main (story-step3.c:18)
+==3215803== 
+==3215803== LEAK SUMMARY:
+==3215803==    definitely lost: 24 bytes in 1 blocks
+==3215803==    indirectly lost: 0 bytes in 0 blocks
+==3215803==      possibly lost: 0 bytes in 0 blocks
+==3215803==    still reachable: 0 bytes in 0 blocks
+==3215803==         suppressed: 0 bytes in 0 blocks
+==3215803== 
+==3215803== For lists of detected and suppressed errors, rerun with: -s
+==3215803== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 3.2: Current test is story-step3 words.txt storye6.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
-Valgrind reported errors:
-==2326543== Memcheck, a memory error detector
-==2326543== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2326543== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2326543== Command: ./story-step3 words.txt storye6.txt
-==2326543== Parent PID: 2326542
-==2326543== 
-==2326543== Invalid read of size 8
-==2326543==    at 0x109CC9: readCatName (rand_story.c:115)
-==2326543==    by 0x109DD3: readStoryLine (rand_story.c:133)
-==2326543==    by 0x109577: main (story-step3.c:40)
-==2326543==  Address 0x4a90f70 is 16 bytes before a block of size 8 alloc'd
-==2326543==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2326543==    by 0x1096C7: setUsedWords (rand_story.c:13)
-==2326543==    by 0x109C39: readCatName (rand_story.c:99)
-==2326543==    by 0x109DD3: readStoryLine (rand_story.c:133)
-==2326543==    by 0x109577: main (story-step3.c:40)
-==2326543== 
-==2326543== Invalid read of size 1
-==2326543==    at 0x484ED76: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2326543==    by 0x490B602: strdup (strdup.c:41)
-==2326543==    by 0x1096F3: setUsedWords (rand_story.c:14)
-==2326543==    by 0x109CE5: readCatName (rand_story.c:116)
-==2326543==    by 0x109DD3: readStoryLine (rand_story.c:133)
-==2326543==    by 0x109577: main (story-step3.c:40)
-==2326543==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2326543== 
-==2326543== 
-==2326543== Process terminating with default action of signal 11 (SIGSEGV)
-==2326543==  Access not within mapped region at address 0x0
-==2326543==    at 0x484ED76: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2326543==    by 0x490B602: strdup (strdup.c:41)
-==2326543==    by 0x1096F3: setUsedWords (rand_story.c:14)
-==2326543==    by 0x109CE5: readCatName (rand_story.c:116)
-==2326543==    by 0x109DD3: readStoryLine (rand_story.c:133)
-==2326543==    by 0x109577: main (story-step3.c:40)
-==2326543==  If you believe this happened as a result of a stack
-==2326543==  overflow in your program's main thread (unlikely but
-==2326543==  possible), you can try to increase the size of the
-==2326543==  main thread stack using the --main-stacksize= flag.
-==2326543==  The main thread stack size used in this run was 8388608.
-==2326543== 
-==2326543== HEAP SUMMARY:
-==2326543==     in use at exit: 9,554 bytes in 27 blocks
-==2326543==   total heap usage: 41 allocs, 14 frees, 9,851 bytes allocated
-==2326543== 
-==2326543== For a detailed leak analysis, rerun with: --leak-check=full
-==2326543== 
-==2326543== For lists of detected and suppressed errors, rerun with: -s
-==2326543== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Valgrind was clean
 
 Step 4
 Checking that story-step4 compiles
@@ -187,30 +161,30 @@ Now running YOUR tests for step 4
 Your output looks good. Lets check valgrind
   - Valgrind reported errors
 Valgrind reported errors or memory leaks:
-==2326579== Memcheck, a memory error detector
-==2326579== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2326579== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==2326579== Command: ./story-step4 words.txt story2.txt
-==2326579== Parent PID: 2326578
-==2326579== 
-==2326579== 
-==2326579== HEAP SUMMARY:
-==2326579==     in use at exit: 24 bytes in 1 blocks
-==2326579==   total heap usage: 83 allocs, 82 frees, 14,912 bytes allocated
-==2326579== 
-==2326579== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==2326579==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2326579==    by 0x1094F5: main (story-step4.c:29)
-==2326579== 
-==2326579== LEAK SUMMARY:
-==2326579==    definitely lost: 24 bytes in 1 blocks
-==2326579==    indirectly lost: 0 bytes in 0 blocks
-==2326579==      possibly lost: 0 bytes in 0 blocks
-==2326579==    still reachable: 0 bytes in 0 blocks
-==2326579==         suppressed: 0 bytes in 0 blocks
-==2326579== 
-==2326579== For lists of detected and suppressed errors, rerun with: -s
-==2326579== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==3215942== Memcheck, a memory error detector
+==3215942== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3215942== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3215942== Command: ./story-step4 words.txt story2.txt
+==3215942== Parent PID: 3215941
+==3215942== 
+==3215942== 
+==3215942== HEAP SUMMARY:
+==3215942==     in use at exit: 24 bytes in 1 blocks
+==3215942==   total heap usage: 90 allocs, 89 frees, 14,961 bytes allocated
+==3215942== 
+==3215942== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==3215942==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3215942==    by 0x1094F5: main (story-step4.c:29)
+==3215942== 
+==3215942== LEAK SUMMARY:
+==3215942==    definitely lost: 24 bytes in 1 blocks
+==3215942==    indirectly lost: 0 bytes in 0 blocks
+==3215942==      possibly lost: 0 bytes in 0 blocks
+==3215942==    still reachable: 0 bytes in 0 blocks
+==3215942==         suppressed: 0 bytes in 0 blocks
+==3215942== 
+==3215942== For lists of detected and suppressed errors, rerun with: -s
+==3215942== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 You have NOT passed your test cases!
 You should go and figure out/understand where thing went wrong
