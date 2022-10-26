@@ -57,11 +57,9 @@ int main(int argc, char ** argv) {
   if (fclose(fStory) != 0) {
     exitFail("Failed to close the story template file!");
   }
-  //freeCat(usedWord);
-  for (size_t i = 0; i < usedWord->n_words; i++) {
-    free(usedWord->words[i]);
-  }
-  free(usedWord->words);
+
+  freeCat(usedWord);
+  free(usedWord);
   freeCatArr(cats);
   return EXIT_SUCCESS;
 }

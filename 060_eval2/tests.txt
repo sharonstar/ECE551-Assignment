@@ -10,4 +10,4 @@ story-step2 worde1.txt
 story-step3 words.txt story2.txt
 story-step3 words.txt storye6.txt
 story-step4 words.txt story2.txt
-#story-step4 -n words.txt story2.txt
+story-step4 -n words.txt story2.txt

@@ -197,8 +197,11 @@ void freeCat(category_t * oneCat) {
       free(oneCat->words[i]);
     }
   }
-  free(oneCat->name);
+  if (oneCat->name != NULL) {
+    free(oneCat->name);
+  }
   free(oneCat->words);
+  //free(oneCat);
 }
 void freeStrArr(char ** strarr, size_t n) {
   for (size_t i = 0; i < n; i++) {
