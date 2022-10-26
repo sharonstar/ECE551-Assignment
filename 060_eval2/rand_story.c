@@ -72,7 +72,7 @@ const char * readCatName(char * start,
   n++;
   // step1: cats is always NULL
   if (cats == NULL) {
-    const char * replace = chooseWord(currName, cats);
+    const char * replace = strdup(chooseWord(currName, cats));
     free(catName);
     freeStrArr(catNameArray, n);
     return replace;
