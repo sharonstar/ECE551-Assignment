@@ -14,10 +14,13 @@ int main(int argc, char ** argv) {
   }
   char * line = NULL;
   size_t sz = 0;
+  size_t n = 0;
   char ** catNameArray = NULL;
+
   while (getline(&line, &sz, f) >= 0) {
-    readStoryLine(line, catNameArray, NULL, 0);
+    readStoryLine(line, catNameArray, NULL, n, NULL, 1);
   }
+  free(line);
   if (fclose(f) != 0) {
     exitFail("Failed to close the input file!");
   }

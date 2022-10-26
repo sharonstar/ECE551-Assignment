@@ -5,14 +5,26 @@
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr, "Only take one command line argument.");
-    return EXIT_FAILURE;
+    exitFail("Only take one command line argument.");
   }
   FILE * f = fopen(argv[1], "r");
   if (f == NULL) {
-    perror("Could not open file.");
-    return EXIT_FAILURE;
+    exitFail("Could not open file.");
   }
+  catarray_t * cats = malloc(sizeof(*cats));
+  cats->n = 0;
+  cats->arr = NULL;
+
   char * line = NULL;
   size_t sz = 0;
   while (getline(&line, &sz, f) >= 0) {
+    readWordLine(line, cats);
+  }
+  free(line);
+  if (fclose(f) != 0) {
+    exitFail("Failed to close the input file!");
+  }
+  printWords(cats);
+  freeCatArr(cats);
+  return EXIT_SUCCESS;
+}

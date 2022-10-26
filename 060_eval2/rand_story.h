@@ -7,7 +7,26 @@
 
 #include "provided.h"
 
-void exitFail(const char * message);
-void readStoryLine(char * line, char ** catNameArray, catarray_t * cats, size_t n);
+void exitFail(const char * errormess);
+void setUsedWords(const char * str, category_t * usedWords);
+int isvalid(char * str);
+void removeUsedWords(char * catName, const char * str, catarray_t * cat);
+void readStoryLine(char * line,
+                   char ** catNameArray,
+                   catarray_t * cats,
+                   size_t n,
+                   category_t * usedWord,
+                   int index);
+const char * readCatName(char * start,
+                         char ** catNameArray,
+                         catarray_t * cats,
+                         size_t n,
+                         category_t * usedWord,
+                         int index);
+
+void readWordLine(char * line, catarray_t * cats);
+void freeCatArr(catarray_t * cats);
+void freeCat(category_t * oneCat);
+void freeStrArr(char ** strarr, size_t n);
 
 #endif
