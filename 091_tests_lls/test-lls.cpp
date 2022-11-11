@@ -82,11 +82,11 @@ class Tester {
     IntList::Node * n1 = l1.head;
     IntList::Node * n2 = l2.head;
     while (n1->next != NULL && n2->next != NULL) {
-      assert(n1->data = n2->data);
+      assert(n1->data == n2->data);
       n1 = n1->next;
       n2 = n2->next;
     }
-    assert(n1->data = n2->data);
+    assert(n1->data == n2->data);
   }
   void testAssign() {  //[1, 2, 3]
     IntList l1;
@@ -100,11 +100,11 @@ class Tester {
     IntList::Node * n1 = l1.head;
     IntList::Node * n2 = l2.head;
     while (n1->next != NULL && n2->next != NULL) {
-      assert(n1->data = n2->data);
+      assert(n1->data == n2->data);
       n1 = n1->next;
       n2 = n2->next;
     }
-    assert(n1->data = n2->data);
+    assert(n1->data == n2->data);
   }
   void testRemove1() {  //[1]
     IntList il;
