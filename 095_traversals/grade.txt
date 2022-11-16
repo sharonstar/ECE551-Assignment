@@ -1,6 +1,6 @@
-Grading at 11/16/2022:08:39:46.933894
-For commit ID 050ef4db8c694ad41539b9411da2889d4c40f5df
-Grading at Wed Nov 16 03:39:46 AM EST 2022
+Grading at 11/16/2022:08:45:07.231317
+For commit ID 33389df41ded8ef509675543d8b0e864da183551
+Grading at Wed Nov 16 03:45:07 AM EST 2022
 Comparing answer1.txt
 Your file matched the expected output
  answer1.txt is correct
@@ -9,6 +9,11 @@ Your file matched the expected output
  answer2.txt is correct
 Comparing answer3.txt to one possible solution
  (two child delete uses left, then all the way right)
+Line_1_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+Comparing answer3.txt to the other possible solution
+ (two child delete uses right, then all the way left)
 Your file matched the expected output
  answer3.txt is correct
 
