@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <ostream>
 
@@ -40,7 +41,7 @@ void check(Function<int, int> * f,
   CountedIntFn * func = new CountedIntFn(invoke_num, f, mesg);
   int ans = binarySearchForZero(func, low, high);
   if (ans != expected_ans) {
-    fprintf(stderr, "ans:%d\n", ans);
+    //fprintf(stderr, "ans:%d\n", ans);
     fprintf(stderr, "The answer is incorrect in %s\n", mesg);
     exit(EXIT_FAILURE);
   }
@@ -70,4 +71,5 @@ int main() {
   check(&l, -2, 0, -1, "f(x) = x in [-2,0)");
   // check(&l, -5, -5, -6, "f(x) = x in [-5, -5)");
   check(&l, -5, -5, -5, "f(x) = x in [5, 5)");
+  fprintf(stderr, "correct!\n");
 }
