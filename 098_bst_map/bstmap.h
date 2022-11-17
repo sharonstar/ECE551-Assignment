@@ -91,7 +91,14 @@ class BstMap : public Map<K, V> {
       return curr;
     }
   }
-
-  virtual ~BstMap<K, V>() {}
+  void destroy(Node * root) {
+    if (root == NULL) {
+      return;
+    }
+    destroy(root->left);
+    destroy(root->right);
+    delete root;
+  }
+  virtual ~BstMap<K, V>() { destroy(root); }
 };
 #endif
