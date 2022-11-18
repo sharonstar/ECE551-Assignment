@@ -1,116 +1,47 @@
-Grading at 11/18/2022:22:42:51.462297
-For commit ID 0195ad29293c814def91972640b977fd9f9c2c13
-Grading at Fri Nov 18 05:42:50 PM EST 2022
+Grading at 11/18/2022:22:47:41.593158
+For commit ID 22aea523d691f3aabcc9a095ed2158391f2b1ac0
+Grading at Fri Nov 18 05:47:41 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
-   54 | typedef BstSet<KEYTYPE> BSTSetTy;
-      |         ^~~~~~
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |   ^~~~~~~~
-      |   SetTy
-90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |              ^~~
-90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                        ^~~~~~~~
-90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |              ^~
-      |              m
-90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                       ^~~~~~~~
-90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  149 |   delete bmt;
-      |          ^~~
-90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
-  151 |   m = bmt = new BSTSetTy();
-      |                 ^~~~~~~~
-90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  173 |   delete bmt;
-      |          ^~~
-90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  174 |   delete m2;
-      |          ^~
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = int]’:
+bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = int]’
+bstset.h:60:16:   required from here
+bstset.h:83:15: error: ‘class BstSet<int>::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |         ~~~~~~^~~~~
+bstset.h:83:29: error: ‘class BstSet<int>::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |                       ~~~~~~^~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
-   54 | typedef BstSet<KEYTYPE> BSTSetTy;
-      |         ^~~~~~
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |   ^~~~~~~~
-      |   SetTy
-90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |              ^~~
-90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                        ^~~~~~~~
-90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |              ^~
-      |              m
-90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                       ^~~~~~~~
-90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  149 |   delete bmt;
-      |          ^~~
-90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
-  151 |   m = bmt = new BSTSetTy();
-      |                 ^~~~~~~~
-90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  173 |   delete bmt;
-      |          ^~~
-90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  174 |   delete m2;
-      |          ^~
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = std::__cxx11::basic_string<char>]’:
+bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = std::__cxx11::basic_string<char>]’
+bstset.h:60:16:   required from here
+bstset.h:83:15: error: ‘class BstSet<std::__cxx11::basic_string<char> >::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |         ~~~~~~^~~~~
+bstset.h:83:29: error: ‘class BstSet<std::__cxx11::basic_string<char> >::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |                       ~~~~~~^~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
-   54 | typedef BstSet<KEYTYPE> BSTSetTy;
-      |         ^~~~~~
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |   ^~~~~~~~
-      |   SetTy
-90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |              ^~~
-90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
-   70 |   BSTSetTy * bmt = new BSTSetTy();
-      |                        ^~~~~~~~
-90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |              ^~
-      |              m
-90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
-   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
-      |                       ^~~~~~~~
-90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  149 |   delete bmt;
-      |          ^~~
-90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
-  151 |   m = bmt = new BSTSetTy();
-      |                 ^~~~~~~~
-90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  173 |   delete bmt;
-      |          ^~~
-90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-  174 |   delete m2;
-      |          ^~
+In file included from 90-tester.cpp:1:
+bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = Tester]’:
+bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = Tester]’
+bstset.h:60:16:   required from here
+bstset.h:83:15: error: ‘class BstSet<Tester>::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |         ~~~~~~^~~~~
+bstset.h:83:29: error: ‘class BstSet<Tester>::Node’ has no member named ‘value’
+   83 |         curr->value = temp->value;
+      |                       ~~~~~~^~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F
