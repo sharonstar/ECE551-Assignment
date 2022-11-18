@@ -103,7 +103,7 @@ class SetMap : public Set<T> {
     destroy(curr->right);
     delete curr;
   }
-  virtual ~BstMap<K, V>() { destroy(root); }
+  virtual ~SetMap<T>() { destroy(root); }
   // copy constructor
   Node * copyHelper(Node * rhs) {
     if (rhs == NULL) {
