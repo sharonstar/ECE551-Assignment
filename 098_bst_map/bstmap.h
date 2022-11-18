@@ -28,6 +28,10 @@ class BstMap : public Map<K, V> {
       if (key < (*curr)->key) {
         curr = &(*curr)->left;
       }
+      else if (key == (*curr)->key) {
+        (*curr)->value = value;
+        return;
+      }
       else {
         curr = &(*curr)->right;
       }

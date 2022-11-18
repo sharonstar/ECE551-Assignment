@@ -7,6 +7,7 @@
 int main(void) {
   BstMap<int, int> map;
   map.add(60, 1);
+  map.add(60, 2);
   map.add(19, 2);
   map.add(93, 3);
   map.add(4, 4);
