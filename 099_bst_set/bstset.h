@@ -1,5 +1,8 @@
 #ifndef __SETMAP_H__
 #define __SETMAP_H__
+#include <cstdlib>
+#include <iostream>
+
 #include "set.h"
 
 template<typename T>
@@ -25,7 +28,6 @@ class SetMap : public Set<T> {
         curr = &(*curr)->left;
       }
       else if (key == (*curr)->key) {
-        (*curr)->value = value;
         return;
       }
       else {
