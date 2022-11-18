@@ -112,7 +112,7 @@ class BstMap : public Map<K, V> {
     if (curr == NULL) {
       return NULL;
     }
-    curr = new Node(curr->key, curr->value);
+    curr = new Node(rhs->key, rhs->value);
     curr->left = copyHelper(curr->left, rhs->left);
     curr->right = copyHelper(curr->right, rhs->right);
     return curr;
