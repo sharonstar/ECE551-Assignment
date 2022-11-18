@@ -80,7 +80,6 @@ class BstSet : public Set<T> {
         Node * temp = findMin(curr->right);
         //std::swap(curr, temp);
         curr->key = temp->key;
-        curr->value = temp->value;
         curr->right = removeHelper(curr->right, curr->key);
         return curr;
       }
