@@ -64,13 +64,13 @@ class BstMap : public Map<K, V> {
       // left child is null
       if (curr->left == NULL) {
         Node * temp = curr->right;
-        delete temp;
+        delete curr;
         return temp;
       }
       // right child is null
       else if (curr->right == NULL) {
         Node * temp = curr->left;
-        delete temp;
+        delete curr;
         return temp;
       }
       // neither child is null

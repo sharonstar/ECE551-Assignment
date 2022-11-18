@@ -20,5 +20,13 @@ int main(void) {
   std::cout << "expected1 = 1; ans1 =" << ans1 << "\n";
   std::cout << "expected2 = 4; ans2 =" << ans2 << "\n";
   map.remove(19);
+  map.remove(25);
+  map.remove(11);
+  try {
+    map.lookup(19);
+  }
+  catch (std::invalid_argument & e) {
+    std::cerr << e.what() << "\n";
+  }
   return EXIT_SUCCESS;
 }
