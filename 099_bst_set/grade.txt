@@ -1,0 +1,188 @@
+Grading at 11/18/2022:22:34:39.367245
+For commit ID 7019b8d210bd1c9440006110c8ed4bd5f3c4aee8
+Grading at Fri Nov 18 05:34:38 PM EST 2022
+-----------------------------------------------
+testcase 1 : Testing with BstSet<int>
+...compiling...
+In file included from 90-tester.cpp:1:
+bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |           ^~~~~~~
+bstset.h:106:12: error: expected ‘;’ at end of member declaration
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |            ^~~~~~
+      |                  ;
+bstset.h:106:18: error: expected unqualified-id before ‘<’ token
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |                  ^
+bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
+bstset.h:28:26: error: ‘value’ was not declared in this scope
+   28 |         (*curr)->value = value;
+      |                          ^~~~~
+bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
+bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
+  131 |       std::cout << root->key << " ";
+      |            ^~~~
+bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
+    3 | #include "set.h"
+  +++ |+#include <iostream>
+    4 | 
+90-tester.cpp: At global scope:
+90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
+   54 | typedef BstSet<KEYTYPE> BSTSetTy;
+      |         ^~~~~~
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |   ^~~~~~~~
+      |   SetTy
+90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |              ^~~
+90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                        ^~~~~~~~
+90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |              ^~
+      |              m
+90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                       ^~~~~~~~
+90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  149 |   delete bmt;
+      |          ^~~
+90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
+  151 |   m = bmt = new BSTSetTy();
+      |                 ^~~~~~~~
+90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  173 |   delete bmt;
+      |          ^~~
+90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  174 |   delete m2;
+      |          ^~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 2 : Testing with BstSet<std::string>
+...compiling...
+In file included from 90-tester.cpp:1:
+bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |           ^~~~~~~
+bstset.h:106:12: error: expected ‘;’ at end of member declaration
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |            ^~~~~~
+      |                  ;
+bstset.h:106:18: error: expected unqualified-id before ‘<’ token
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |                  ^
+bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
+bstset.h:28:26: error: ‘value’ was not declared in this scope
+   28 |         (*curr)->value = value;
+      |                          ^~~~~
+bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
+bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
+  131 |       std::cout << root->key << " ";
+      |            ^~~~
+bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
+    3 | #include "set.h"
+  +++ |+#include <iostream>
+    4 | 
+90-tester.cpp: At global scope:
+90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
+   54 | typedef BstSet<KEYTYPE> BSTSetTy;
+      |         ^~~~~~
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |   ^~~~~~~~
+      |   SetTy
+90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |              ^~~
+90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                        ^~~~~~~~
+90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |              ^~
+      |              m
+90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                       ^~~~~~~~
+90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  149 |   delete bmt;
+      |          ^~~
+90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
+  151 |   m = bmt = new BSTSetTy();
+      |                 ^~~~~~~~
+90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  173 |   delete bmt;
+      |          ^~~
+90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  174 |   delete m2;
+      |          ^~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 3 : Testing with BstSet<(a custom class we wrote)>
+...compiling...
+In file included from 90-tester.cpp:1:
+bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |           ^~~~~~~
+bstset.h:106:12: error: expected ‘;’ at end of member declaration
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |            ^~~~~~
+      |                  ;
+bstset.h:106:18: error: expected unqualified-id before ‘<’ token
+  106 |   virtual ~BstMap<K, V>() { destroy(root); }
+      |                  ^
+bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
+bstset.h:28:26: error: ‘value’ was not declared in this scope
+   28 |         (*curr)->value = value;
+      |                          ^~~~~
+bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
+bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
+  131 |       std::cout << root->key << " ";
+      |            ^~~~
+bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
+    3 | #include "set.h"
+  +++ |+#include <iostream>
+    4 | 
+90-tester.cpp: At global scope:
+90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
+   54 | typedef BstSet<KEYTYPE> BSTSetTy;
+      |         ^~~~~~
+90-tester.cpp: In function ‘int main()’:
+90-tester.cpp:70:3: error: ‘BSTSetTy’ was not declared in this scope; did you mean ‘SetTy’?
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |   ^~~~~~~~
+      |   SetTy
+90-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |              ^~~
+90-tester.cpp:70:24: error: expected type-specifier before ‘BSTSetTy’
+   70 |   BSTSetTy * bmt = new BSTSetTy();
+      |                        ^~~~~~~~
+90-tester.cpp:92:14: error: ‘m2’ was not declared in this scope; did you mean ‘m’?
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |              ^~
+      |              m
+90-tester.cpp:92:23: error: expected type-specifier before ‘BSTSetTy’
+   92 |   BSTSetTy * m2 = new BSTSetTy(*bmt);
+      |                       ^~~~~~~~
+90-tester.cpp:149:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  149 |   delete bmt;
+      |          ^~~
+90-tester.cpp:151:17: error: expected type-specifier before ‘BSTSetTy’
+  151 |   m = bmt = new BSTSetTy();
+      |                 ^~~~~~~~
+90-tester.cpp:173:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  173 |   delete bmt;
+      |          ^~~
+90-tester.cpp:174:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+  174 |   delete m2;
+      |          ^~
+The code did not compile.  This test failed.
+
+Overall Grade: F
