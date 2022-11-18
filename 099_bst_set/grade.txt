@@ -1,20 +1,10 @@
-Grading at 11/18/2022:22:34:39.367245
-For commit ID 7019b8d210bd1c9440006110c8ed4bd5f3c4aee8
-Grading at Fri Nov 18 05:34:38 PM EST 2022
+Grading at 11/18/2022:22:38:10.121117
+For commit ID 33de9b9d443313224be0dacbd2fadba6a236bd83
+Grading at Fri Nov 18 05:38:09 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
 In file included from 90-tester.cpp:1:
-bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |           ^~~~~~~
-bstset.h:106:12: error: expected ‘;’ at end of member declaration
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |            ^~~~~~
-      |                  ;
-bstset.h:106:18: error: expected unqualified-id before ‘<’ token
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |                  ^
 bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
 bstset.h:28:26: error: ‘value’ was not declared in this scope
    28 |         (*curr)->value = value;
@@ -66,16 +56,6 @@ The code did not compile.  This test failed.
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
 In file included from 90-tester.cpp:1:
-bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |           ^~~~~~~
-bstset.h:106:12: error: expected ‘;’ at end of member declaration
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |            ^~~~~~
-      |                  ;
-bstset.h:106:18: error: expected unqualified-id before ‘<’ token
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |                  ^
 bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
 bstset.h:28:26: error: ‘value’ was not declared in this scope
    28 |         (*curr)->value = value;
@@ -127,16 +107,6 @@ The code did not compile.  This test failed.
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
 In file included from 90-tester.cpp:1:
-bstset.h:106:11: error: declaration of ‘~ BstMap’ as non-function
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |           ^~~~~~~
-bstset.h:106:12: error: expected ‘;’ at end of member declaration
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |            ^~~~~~
-      |                  ;
-bstset.h:106:18: error: expected unqualified-id before ‘<’ token
-  106 |   virtual ~BstMap<K, V>() { destroy(root); }
-      |                  ^
 bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
 bstset.h:28:26: error: ‘value’ was not declared in this scope
    28 |         (*curr)->value = value;
