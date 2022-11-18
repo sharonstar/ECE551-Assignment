@@ -4,9 +4,8 @@
 #include <iostream>
 
 #include "set.h"
-
 template<typename T>
-class SetMap : public Set<T> {
+class BstSet : public Set<T> {
  private:
   class Node {
    public:
@@ -19,7 +18,7 @@ class SetMap : public Set<T> {
 
  public:
   // constructor
-  SetMap<T>() : root(NULL) {}
+  BstSet<T>() : root(NULL) {}
 
   virtual void add(const T & key) {
     Node ** curr = &root;
@@ -105,7 +104,7 @@ class SetMap : public Set<T> {
     destroy(curr->right);
     delete curr;
   }
-  virtual ~SetMap<T>() { destroy(root); }
+  virtual ~BstSet<T>() { destroy(root); }
   // copy constructor
   Node * copyHelper(Node * rhs) {
     if (rhs == NULL) {
@@ -116,11 +115,11 @@ class SetMap : public Set<T> {
     curr->right = copyHelper(rhs->right);
     return curr;
   }
-  SetMap<T>(const SetMap<T> & rhs) : root(NULL) { root = copyHelper(rhs.root); }
+  BstSet<T>(const BstSet<T> & rhs) : root(NULL) { root = copyHelper(rhs.root); }
   // assign operator
-  SetMap<T> & operator=(const SetMap<T> & rhs) {
+  BstSet<T> & operator=(const BstSet<T> & rhs) {
     if (this != &rhs) {
-      SetMap<T> temp = rhs;
+      BstSet<T> temp = rhs;
       std::swap(temp.root, root);
     }
     return *this;
