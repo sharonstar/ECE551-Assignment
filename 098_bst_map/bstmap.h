@@ -1,6 +1,7 @@
 #ifndef __BSTMAP_H__
 #define __BSTMAP_H__
 #include <cstdlib>
+#include <iostream>
 
 #include "map.h"
 
@@ -78,7 +79,7 @@ class BstMap : public Map<K, V> {
         Node * temp = findMin(curr->right);
         curr->key = temp->key;
         curr->value = temp->value;
-        curr->right = removeHelper(curr->right, key);
+        curr->right = removeHelper(curr->right, curr->key);
         return curr;
       }
     }
@@ -122,6 +123,16 @@ class BstMap : public Map<K, V> {
       std::swap(temp.root, root);
     }
     return *this;
+  }
+
+  // print the tree
+  void inorder() { inorder_printer(root); }
+  void inorder_printer(Node * root) {
+    if (root != NULL) {
+      inorder_printer(root->left);
+      std::cout << root->key << "\n";
+      inorder_printer(root->right);
+    }
   }
 };
 #endif

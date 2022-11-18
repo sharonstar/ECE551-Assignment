@@ -15,6 +15,7 @@ int main(void) {
   map.add(1, 7);
   map.add(11, 8);
   map.add(21, 9);
+  map.inorder();
   int ans1 = map.lookup(60);
   int ans2 = map.lookup(4);
   std::cout << "expected1 = 1; ans1 =" << ans1 << "\n";
@@ -22,6 +23,7 @@ int main(void) {
   map.remove(19);
   map.remove(25);
   map.remove(11);
+  map.inorder();
   try {
     map.lookup(19);
   }
