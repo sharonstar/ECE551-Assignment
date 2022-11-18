@@ -1,47 +1,26 @@
-Grading at 11/18/2022:22:47:41.593158
-For commit ID 22aea523d691f3aabcc9a095ed2158391f2b1ac0
-Grading at Fri Nov 18 05:47:41 PM EST 2022
+Grading at 11/18/2022:22:51:33.975429
+For commit ID c343e9ba4d55fc6d151e25739819c2b3d8e8960c
+Grading at Fri Nov 18 05:51:30 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = int]’:
-bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = int]’
-bstset.h:60:16:   required from here
-bstset.h:83:15: error: ‘class BstSet<int>::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |         ~~~~~~^~~~~
-bstset.h:83:29: error: ‘class BstSet<int>::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |                       ~~~~~~^~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = std::__cxx11::basic_string<char>]’:
-bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = std::__cxx11::basic_string<char>]’
-bstset.h:60:16:   required from here
-bstset.h:83:15: error: ‘class BstSet<std::__cxx11::basic_string<char> >::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |         ~~~~~~^~~~~
-bstset.h:83:29: error: ‘class BstSet<std::__cxx11::basic_string<char> >::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |                       ~~~~~~^~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In instantiation of ‘BstSet<T>::Node* BstSet<T>::removeHelper(BstSet<T>::Node*, const T&) [with T = Tester]’:
-bstset.h:60:47:   required from ‘void BstSet<T>::remove(const T&) [with T = Tester]’
-bstset.h:60:16:   required from here
-bstset.h:83:15: error: ‘class BstSet<Tester>::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |         ~~~~~~^~~~~
-bstset.h:83:29: error: ‘class BstSet<Tester>::Node’ has no member named ‘value’
-   83 |         curr->value = temp->value;
-      |                       ~~~~~~^~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
