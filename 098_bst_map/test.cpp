@@ -17,10 +17,8 @@ int main(void) {
   map.add(21, 9);
   int ans1 = map.lookup(60);
   int ans2 = map.lookup(4);
-  std::cout << "\n";
   std::cout << "expected1 = 1; ans1 =" << ans1 << "\n";
   std::cout << "expected2 = 4; ans2 =" << ans2 << "\n";
   map.remove(19);
-  std::cout << "\n";
   return EXIT_SUCCESS;
 }

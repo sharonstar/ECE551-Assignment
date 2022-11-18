@@ -1,6 +1,5 @@
 #ifndef __BSTMAP_H__
 #define __BSTMAP_H__
-#include <cstdio>
 #include <cstdlib>
 
 #include "map.h"
@@ -19,7 +18,9 @@ class BstMap : public Map<K, V> {
   Node * root;
 
  public:
-  BstMap() : root(NULL) {}
+  // constructor
+  BstMap<K, V>() : root(NULL) {}
+
   virtual void add(const K & key, const V & value) {
     Node ** curr = &root;
     while (*curr != NULL) {
@@ -91,14 +92,36 @@ class BstMap : public Map<K, V> {
       return curr;
     }
   }
-  void destroy(Node * root) {
-    if (root == NULL) {
+  // destructor
+  void destroy(Node * curr) {
+    if (curr == NULL) {
       return;
     }
-    destroy(root->left);
-    destroy(root->right);
-    delete root;
+    destroy(curr->left);
+    destroy(curr->right);
+    delete curr;
   }
   virtual ~BstMap<K, V>() { destroy(root); }
+  // copy constructor
+  Node * copyHelper(Node * curr, Node * rhs) {
+    if (curr == NULL) {
+      return NULL;
+    }
+    curr = new Node(curr->key, curr->value);
+    curr->left = copyHelper(curr->left, rhs->left);
+    curr->right = copyHelper(curr->right, rhs->right);
+    return curr;
+  }
+  BstMap<K, V>(const BstMap<K, V> & rhs) : root(NULL) {
+    root = copyHelper(root, rhs.root);
+  }
+  // assign operator
+  BstMap<K, V> & operator=(const BstMap<K, V> & rhs) {
+    if (this != &rhs) {
+      BstMap<K, V> temp = rhs;
+      std::swap(temp.root, root);
+    }
+    return *this;
+  }
 };
 #endif
