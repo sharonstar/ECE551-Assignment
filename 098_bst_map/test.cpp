@@ -25,11 +25,17 @@ int main(void) {
   map.remove(25);
   map.remove(11);
   map.inorder();
+  /*
   try {
     map.lookup(19);
   }
   catch (std::invalid_argument & e) {
     std::cerr << e.what() << "\n";
-  }
+    }*/
+  BstMap<int, int> map2 = map;
+  BstMap<int, int> map3;
+  map3 = map;
+  map3.inorder();
+  map2.inorder();
   return EXIT_SUCCESS;
 }

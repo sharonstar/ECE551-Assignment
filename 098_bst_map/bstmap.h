@@ -108,18 +108,16 @@ class BstMap : public Map<K, V> {
   }
   virtual ~BstMap<K, V>() { destroy(root); }
   // copy constructor
-  Node * copyHelper(Node * curr, Node * rhs) {
-    if (curr == NULL) {
+  Node * copyHelper(Node * rhs) {
+    if (rhs == NULL) {
       return NULL;
     }
-    curr = new Node(rhs->key, rhs->value);
-    curr->left = copyHelper(curr->left, rhs->left);
-    curr->right = copyHelper(curr->right, rhs->right);
+    Node * curr = new Node(rhs->key, rhs->value);
+    curr->left = copyHelper(rhs->left);
+    curr->right = copyHelper(rhs->right);
     return curr;
   }
-  BstMap<K, V>(const BstMap<K, V> & rhs) : root(NULL) {
-    root = copyHelper(root, rhs.root);
-  }
+  BstMap<K, V>(const BstMap<K, V> & rhs) : root(NULL) { root = copyHelper(rhs.root); }
   // assign operator
   BstMap<K, V> & operator=(const BstMap<K, V> & rhs) {
     if (this != &rhs) {
