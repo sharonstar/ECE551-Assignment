@@ -1,23 +1,9 @@
-Grading at 11/18/2022:22:38:10.121117
-For commit ID 33de9b9d443313224be0dacbd2fadba6a236bd83
-Grading at Fri Nov 18 05:38:09 PM EST 2022
+Grading at 11/18/2022:22:42:51.462297
+For commit ID 0195ad29293c814def91972640b977fd9f9c2c13
+Grading at Fri Nov 18 05:42:50 PM EST 2022
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
-bstset.h:28:26: error: ‘value’ was not declared in this scope
-   28 |         (*curr)->value = value;
-      |                          ^~~~~
-bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
-bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
-  131 |       std::cout << root->key << " ";
-      |            ^~~~
-bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
-    3 | #include "set.h"
-  +++ |+#include <iostream>
-    4 | 
-90-tester.cpp: At global scope:
 90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
    54 | typedef BstSet<KEYTYPE> BSTSetTy;
       |         ^~~~~~
@@ -55,20 +41,6 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
-bstset.h:28:26: error: ‘value’ was not declared in this scope
-   28 |         (*curr)->value = value;
-      |                          ^~~~~
-bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
-bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
-  131 |       std::cout << root->key << " ";
-      |            ^~~~
-bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
-    3 | #include "set.h"
-  +++ |+#include <iostream>
-    4 | 
-90-tester.cpp: At global scope:
 90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
    54 | typedef BstSet<KEYTYPE> BSTSetTy;
       |         ^~~~~~
@@ -106,20 +78,6 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-In file included from 90-tester.cpp:1:
-bstset.h: In member function ‘virtual void SetMap<T>::add(const T&)’:
-bstset.h:28:26: error: ‘value’ was not declared in this scope
-   28 |         (*curr)->value = value;
-      |                          ^~~~~
-bstset.h: In member function ‘void SetMap<T>::inorder_printer(SetMap<T>::Node*)’:
-bstset.h:131:12: error: ‘cout’ is not a member of ‘std’
-  131 |       std::cout << root->key << " ";
-      |            ^~~~
-bstset.h:4:1: note: ‘std::cout’ is defined in header ‘<iostream>’; did you forget to ‘#include <iostream>’?
-    3 | #include "set.h"
-  +++ |+#include <iostream>
-    4 | 
-90-tester.cpp: At global scope:
 90-tester.cpp:54:9: error: ‘BstSet’ does not name a type
    54 | typedef BstSet<KEYTYPE> BSTSetTy;
       |         ^~~~~~
