@@ -45,7 +45,6 @@ class Page {
       std::cout << *it << std::endl;
       it++;
     }
-    // std::cout << std::endl;
     if (type == 0) {
       std::cout << "What would you like to do?" << std::endl;
       std::cout << std::endl;
