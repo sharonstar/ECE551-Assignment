@@ -38,19 +38,19 @@ class Page {
   }
 
   void printPage() {
-    std::cout << "Page (" << num << ")" << std::endl;
+    std::cout << "Page " << num << std::endl;
     std::cout << "==========" << std::endl;
     std::vector<std::string>::const_iterator it = contents.begin();
     while (it != contents.end()) {
       std::cout << *it << std::endl;
       it++;
     }
-    std::cout << std::endl;
+    // std::cout << std::endl;
     if (type == 0) {
       std::cout << "What would you like to do?" << std::endl;
       std::cout << std::endl;
       for (int i = 0; i < (int)navigation.size(); i++) {
-        std::cout << i + 1 << ". " << navigation[i] << std::endl;
+        std::cout << " " << i + 1 << ". " << navigation[i] << std::endl;
       }
     }
     else if (type == 1) {
@@ -59,5 +59,6 @@ class Page {
     else {
       std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
     }
+    std::cout << std::endl;
   }
 };
