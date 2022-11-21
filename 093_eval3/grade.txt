@@ -1,0 +1,22 @@
+Grading at 11/21/2022:02:19:17.274361
+For commit ID c64b61e4291969d5ee7d997715f15868f22ccf25
+Grading at Sun Nov 20 09:19:15 PM EST 2022
+Doing some basic checking for your submission
+
+Step 1
+Checking that cyoa-step1 compiles
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4
+g++ -o cyoa-step1 -ggdb3 -Wall -Werror -pedantic -std=gnu++98 cyoa-step1.cpp page.hpp story.hpp
+The code compiled (good)
+Executable cyoa-step1 exists (good)
+------------------------------------
+Now running YOUR tests for step 1
+------------------------------------
+No request to check for intermediate deadline completion on step 1
+
+Step 2
+Checking that cyoa-step2 compiles
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4
+The code did not compile!
+
+Overall Grade: NO GRADE YET
