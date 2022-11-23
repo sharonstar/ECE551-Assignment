@@ -30,6 +30,10 @@ class Story {
           std::cerr << "Invalid page number" << std::endl;
           exit(EXIT_FAILURE);
         }
+        if (numofPage < 0) {
+          std::cerr << "Page number is negative" << std::endl;
+          exit(EXIT_FAILURE);
+        }
         pageObject.num = numofPage;
         if (end0[1] == 'N') {
           pageObject.type = 0;
@@ -40,8 +44,12 @@ class Story {
         else if (end0[1] == 'L') {
           pageObject.type = 2;
         }
-        else if (end0[1] != 'N' || end0[1] != 'W' || end0[1] != 'L' || end0[2] != ':') {
+        else if (end0[1] != 'N' || end0[1] != 'W' || end0[1] != 'L') {
           std::cerr << "Invalid page type" << std::endl;
+          exit(EXIT_FAILURE);
+        }
+        if (end0[2] != ':') {
+          std::cerr << "There is not : after page type " << std::endl;
           exit(EXIT_FAILURE);
         }
         end0 += 3;
