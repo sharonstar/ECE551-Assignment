@@ -187,7 +187,7 @@ class Story {
         std::string badinput;
         std::cin >> badinput;
       }
-      std::cerr << "This is not a valid input!" << std::endl;
+      std::cout << "This is not a valid input!" << std::endl;
       std::cin >> input;
     }
     return (int)pages[curr].nextPage[input - 1];
