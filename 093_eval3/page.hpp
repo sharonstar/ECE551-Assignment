@@ -57,6 +57,5 @@ class Page {
     else {
       std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
     }
-    std::cout << std::endl;
   }
 };
