@@ -1,6 +1,6 @@
-Grading at 11/26/2022:19:48:26.188631
-For commit ID 7e59aedd52a59ae914a98aa5cd6f0b77a7d7ec3b
-Grading at Sat Nov 26 02:48:03 PM EST 2022
+Grading at 11/26/2022:20:04:29.541693
+For commit ID d60db9706e3f93a2e11682872f2ad225d2690fd5
+Grading at Sat Nov 26 03:04:06 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -29,7 +29,7 @@ Step 1 EC intermediate deadline test 2
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
-Intermediate deadline requirements for Step 1 passed at Sat Nov 26 02:48:07 PM EST 2022
+Intermediate deadline requirements for Step 1 passed at Sat Nov 26 03:04:10 PM EST 2022
 
 Step 2
 Checking that cyoa-step2 compiles
@@ -141,7 +141,7 @@ What would you like to do?					What would you like to do?
  1. Silent Night, accompanied by raven calls			 1. Silent Night, accompanied by raven calls
  2. Angels We Have Heard on High, accompanied by roosters cro	 2. Angels We Have Heard on High, accompanied by roosters cro
  3. Bohemian Rhapsody, accompanied by the magestic call of a 	 3. Bohemian Rhapsody, accompanied by the magestic call of a 
-							      >	That is not a valid choice, please try again
+This is not a valid input!				      |	That is not a valid choice, please try again
 You take out your whistle and Denevieve starts to sing		You take out your whistle and Denevieve starts to sing
 
 "Si--iii-lent niiight" (CAW CAW CAW)				"Si--iii-lent niiight" (CAW CAW CAW)
@@ -225,7 +225,7 @@ What would you like to do?					What would you like to do?
  1. Go to Denevieve for help.					 1. Go to Denevieve for help.
  2. Go to Grew for help.					 2. Go to Grew for help.
  3. Go alone.							 3. Go alone.
-							      >	That is not a valid choice, please try again
+This is not a valid input!				      |	That is not a valid choice, please try again
 After thinking about it for a bit, you decide to go to Grew f	After thinking about it for a bit, you decide to go to Grew f
 you explain your quest, and that you have a magic toaster, Gr	you explain your quest, and that you have a magic toaster, Gr
 idea. 								idea. 
@@ -390,7 +390,7 @@ What would you like to do?					What would you like to do?
  1. Try to sneak past the sleeping dragon			 1. Try to sneak past the sleeping dragon
  2. Leave the dragon's cave and go home				 2. Leave the dragon's cave and go home
  3. Stab the dragon in the neck					 3. Stab the dragon in the neck
-							      >	That is not a valid choice, please try again
+This is not a valid input!				      |	That is not a valid choice, please try again
 As you tiptoe past the sleeping dragon, steam rising from her	As you tiptoe past the sleeping dragon, steam rising from her
 see a gleaming treasure hoard, just beyond the scaly tail.	see a gleaming treasure hoard, just beyond the scaly tail.
 
@@ -451,7 +451,7 @@ What would you like to do?					What would you like to do?
  1. Try to sneak past the sleeping dragon			 1. Try to sneak past the sleeping dragon
  2. Leave the dragon's cave and go home				 2. Leave the dragon's cave and go home
  3. Stab the dragon in the neck					 3. Stab the dragon in the neck
-							      >	That is not a valid choice, please try again
+This is not a valid input!				      |	That is not a valid choice, please try again
 As you tiptoe past the sleeping dragon, steam rising from her	As you tiptoe past the sleeping dragon, steam rising from her
 see a gleaming treasure hoard, just beyond the scaly tail.	see a gleaming treasure hoard, just beyond the scaly tail.
 
