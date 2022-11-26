@@ -168,21 +168,27 @@ class Story {
     while (true) {
       pages[curr].printPage();
       curr = navigateNextPage(curr);
+      if (curr == -1) {
+        return;
+      }
     }
   }
   int navigateNextPage(int curr) {
     if (pages[curr].type != 0) {
-      exit(EXIT_SUCCESS);
+      return -1;
     }
     // check whether input number is valid
     std::vector<size_t> vec = pages[curr].nextPage;
     int input;
-    // std::cin >> input;
-    while (!(std::cin >> input) || input < 1 ||
-           input > (int)pages[curr].nextPage.size()) {
-      std::cin.clear();
-      std::cin.ignore();
-      std::cout << "That is not a valid choice, please try again\n";
+    std::cin >> input;
+    while (!std::cin.good() || input < 1 || input > (int)pages[curr].nextPage.size()) {
+      if (!std::cin.good()) {
+        std::cin.clear();
+        std::string badinput;
+        std::cin >> badinput;
+      }
+      std::cerr << "This is not a valid input!" << std::endl;
+      std::cin >> input;
     }
     return (int)pages[curr].nextPage[input - 1];
   }
