@@ -177,8 +177,9 @@ class Story {
     // check whether input number is valid
     std::vector<size_t> vec = pages[curr].nextPage;
     int input;
-    std::cin >> input;
-    while (!std::cin.good() || input == 0 || input > (int)pages[curr].nextPage.size()) {
+    // std::cin >> input;
+    while (!(std::cin >> input) || input < 1 ||
+           input > (int)pages[curr].nextPage.size()) {
       std::cin.clear();
       std::cin.ignore();
       std::cout << "That is not a valid choice, please try again\n";
