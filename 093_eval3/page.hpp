@@ -7,19 +7,20 @@
 class Page {
  public:
   std::string name;
-  int num;
+  size_t num;
   int type;  // NORMAL = 0, WIN = 1, LOSE = 2
+  bool ref;
   std::vector<std::string> navigation;
-  std::vector<int> nextPage;
+  std::vector<size_t> nextPage;
   std::vector<std::string> contents;
 
   // constructor
   Page() :
-      // name(NULL),
       num(0),
       type(0),
+      ref(false),
       navigation(std::vector<std::string>()),
-      nextPage(std::vector<int>()),
+      nextPage(std::vector<size_t>()),
       contents(std::vector<std::string>()) {}
 
   void readPageContent(std::string directoryName) {
