@@ -126,6 +126,8 @@ class Story {
   //step1: print story
   void printStory() {
     for (int i = 0; i < numPages; i++) {
+      std::cout << "Page " << pages[i].num << std::endl;
+      std::cout << "==========" << std::endl;
       pages[i].printPage();
     }
   }

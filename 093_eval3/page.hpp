@@ -39,8 +39,6 @@ class Page {
   }
 
   void printPage() {
-    std::cout << "Page " << num << std::endl;
-    std::cout << "==========" << std::endl;
     std::vector<std::string>::const_iterator it = contents.begin();
     while (it != contents.end()) {
       std::cout << *it << std::endl;
