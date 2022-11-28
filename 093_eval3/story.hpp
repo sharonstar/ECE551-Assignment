@@ -197,7 +197,7 @@ class Story {
   void backtrack() {
     std::vector<Page> path;
     std::vector<int> index;
-    path[0] = pages[0];
+    path.push_back(pages[0]);
     backtrackHelper(path, index);
   }
   //
@@ -212,6 +212,7 @@ class Story {
       for (int i = 0; i < (int)path.back().nextPage.size(); i++) {
         int flag = 0;
         for (int j = 0; j < (int)path.size(); j++) {
+          //std::cout << path[j].num << std::endl;
           if (path[j].num == path.back().nextPage[i]) {
             flag = 1;
             break;
