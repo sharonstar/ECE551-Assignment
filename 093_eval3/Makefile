@@ -1,4 +1,4 @@
-all: cyoa-step1 cyoa-step2 #cyoa-step3 cyoa-step4
+all: cyoa-step1 cyoa-step2 cyoa-step3 #cyoa-step4
 
 cyoa-step1: cyoa-step1.cpp page.hpp story.hpp
 	g++ -o cyoa-step1 -ggdb3 -Wall -Werror -pedantic -std=gnu++98 cyoa-step1.cpp page.hpp story.hpp

@@ -192,4 +192,40 @@ class Story {
     }
     return (int)pages[curr].nextPage[input - 1];
   }
+
+  // step3: find all possible paths to win
+  void backtrack() {
+    std::vector<Page> path;
+    std::vector<int> index;
+    path[0] = pages[0];
+    backtrackHelper(path, index);
+  }
+  //
+  void backtrackHelper(std::vector<Page> & path, std::vector<int> & index) {
+    if (path.back().type == 1) {
+      for (int i = 0; i < (int)path.size() - 1; i++) {
+        std::cout << path[i].num << "(" << index[i] + 1 << "),";
+      }
+      std::cout << path.back().num << "(win)" << std::endl;
+    }
+    else {
+      for (int i = 0; i < (int)path.back().nextPage.size(); i++) {
+        int flag = 0;
+        for (int j = 0; j < (int)path.size(); j++) {
+          if (path[j].num == path.back().nextPage[i]) {
+            flag = 1;
+            break;
+          }
+        }
+        if (flag == 1) {
+          continue;
+        }
+        path.push_back(pages[(int)path.back().nextPage[i]]);
+        index.push_back(i);
+        backtrackHelper(path, index);
+        path.pop_back();
+        index.pop_back();
+      }
+    }
+  }
 };
