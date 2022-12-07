@@ -143,8 +143,9 @@ class Story {
           std::cerr << "Page that is referenced by a choice is invalid" << std::endl;
           exit(EXIT_FAILURE);
         }
-        assert(it->nextPage[i] != it->num);
-        pages[it->nextPage[i]].ref = true;
+        if (it->nextPage[i] != it->num) {
+          pages[it->nextPage[i]].ref = true;
+        }
       }
       // 3b. Every page (except page 0) is referenced by at least one *other* page's choices
       if (it->ref == false && it->num != 0) {
@@ -197,19 +198,27 @@ class Story {
   void backtrack() {
     std::vector<Page> path;
     std::vector<int> index;
+    int flagwin = 0;
     path.push_back(pages[0]);
-    backtrackHelper(path, index);
+    backtrackHelper(path, index, &flagwin);
+    if (flagwin == 0) {
+      std::cout << "This story is unwinnable!" << std::endl;
+    }
   }
-  //
-  void backtrackHelper(std::vector<Page> & path, std::vector<int> & index) {
+  // backtracking helper function
+  void backtrackHelper(std::vector<Page> & path,
+                       std::vector<int> & index,
+                       int * flagwin) {
     if (path.back().type == 1) {
       for (int i = 0; i < (int)path.size() - 1; i++) {
         std::cout << path[i].num << "(" << index[i] + 1 << "),";
       }
       std::cout << path.back().num << "(win)" << std::endl;
+      *flagwin = 1;
     }
     else {
       for (int i = 0; i < (int)path.back().nextPage.size(); i++) {
+        // check whether there are repetitive pages in path
         int flag = 0;
         for (int j = 0; j < (int)path.size(); j++) {
           if (path[j].num == path.back().nextPage[i]) {
@@ -222,7 +231,7 @@ class Story {
         }
         path.push_back(pages[(int)path.back().nextPage[i]]);
         index.push_back(i);
-        backtrackHelper(path, index);
+        backtrackHelper(path, index, flagwin);
         path.pop_back();
         index.pop_back();
       }
