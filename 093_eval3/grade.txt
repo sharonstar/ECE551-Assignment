@@ -1,6 +1,6 @@
-Grading at 12/08/2022:06:17:08.271429
-For commit ID 06187f71f4a6768187b3a74263b62834be3d321e
-Grading at Thu Dec  8 01:16:27 AM EST 2022
+Grading at 12/08/2022:07:02:01.578507
+For commit ID 3359bc4add9fb144f7b9a2fb01e83ec0cd90a476
+Grading at Thu Dec  8 02:01:33 AM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -115,7 +115,9 @@ You have passed this test case
 Step 4 EC intermediate deadline test 10
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input18.txt
-You indicated this was a failure, but it was not
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 11
 ===========================================================
@@ -211,12 +213,16 @@ You have passed this test case
 Step 4 EC intermediate deadline test 24
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input7.txt
-You indicated this was a failure, but it was not
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 25
 ===========================================================
 ./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input8.txt
-You indicated this was a failure, but it was not
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
 
 Step 4 EC intermediate deadline test 26
 ===========================================================
@@ -224,6 +230,7 @@ Step 4 EC intermediate deadline test 26
   - Valgrind was clean (no errors, no memory leaks)
 Valgrind was clean for this testcase
 You have passed this test case
+Intermediate deadline requirements for Step 4 passed at Thu Dec  8 02:02:01 AM EST 2022
 
 It looks like you did not provide any test cases
 
