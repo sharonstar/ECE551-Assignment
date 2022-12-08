@@ -81,7 +81,6 @@ class Story {
       exit(EXIT_FAILURE);
     }
     pages[pagenum].variable[line.substr(pos1, pos2 - pos1)] = value;
-    //std::cout << line.substr(pos1, pos2 - pos1) << std::endl;
   }
   // process navigation lines
   void pageNavigation(std::string & line) {

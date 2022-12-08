@@ -54,7 +54,8 @@ class Page {
         std::map<std::string, long int>::iterator it =
             variablePath.find(conditions[i].first);
         if (conditions[i].first == "" ||
-            (it != variablePath.end() && it->second == conditions[i].second)) {
+            (it != variablePath.end() && it->second == conditions[i].second) ||
+            conditions[i].second == 0) {
           std::cout << " " << i + 1 << ". " << navigation[i] << std::endl;
         }
         else {
