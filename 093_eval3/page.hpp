@@ -43,6 +43,7 @@ class Page {
   void printPage(std::map<std::string, long int> variablePath,
                  std::vector<int> & unavilableIndex) {
     std::vector<std::string>::const_iterator it = contents.begin();
+    unavilableIndex.clear();
     while (it != contents.end()) {
       std::cout << *it << std::endl;
       it++;
