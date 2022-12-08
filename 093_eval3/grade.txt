@@ -1,6 +1,6 @@
-Grading at 12/07/2022:05:33:21.941465
-For commit ID e4b4f7534bf8b9b6c50f36ff3e9ef82dcd77152e
-Grading at Wed Dec  7 12:33:17 AM EST 2022
+Grading at 12/08/2022:04:46:20.003387
+For commit ID 1e80ea9e4cb87e194504ad2f4989dd252a99666c
+Grading at Wed Dec  7 11:45:14 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -34,28 +34,414 @@ Executable cyoa-step3 exists (good)
 ------------------------------------
 Now running YOUR tests for step 3
 ------------------------------------
-------------------------------------
-You have requested that we check for intermediate deadline completion on step 3
-------------------------------------
-
-Step 3 EC intermediate deadline test 1
-===========================================================
-./cyoa-step3 /usr/local/ece551/cyoa/story1
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean for this testcase
-You have passed this test case
-
-Step 3 EC intermediate deadline test 2
-===========================================================
-./cyoa-step3 /usr/local/ece551/cyoa/story2
-  - Valgrind was clean (no errors, no memory leaks)
-Valgrind was clean for this testcase
-You have passed this test case
-Intermediate deadline requirements for Step 3 passed at Wed Dec  7 12:33:21 AM EST 2022
+No request to check for intermediate deadline completion on step 3
 
 Step 4
 Checking that cyoa-step4 compiles
 rm -f cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4
-The code did not compile!
+g++ -o cyoa-step4 cyoa-step4.cpp
+The code compiled (good)
+Executable cyoa-step4 exists (good)
+------------------------------------
+Now running YOUR tests for step 4
+------------------------------------
+------------------------------------
+You have requested that we check for intermediate deadline completion on step 4
+------------------------------------
+
+Step 4 EC intermediate deadline test 1
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input0.txt
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
+your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
+
+"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
+have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
+one, but choosing is so hard.					one, but choosing is so hard.
+
+What would you like to do?					What would you like to do?
+
+ 1. Purchase a chocolate croissant.				 1. Purchase a chocolate croissant.
+ 2. Purchase an eclair.						 2. Purchase an eclair.
+ 3. Purchase a muffin.						 3. Purchase a muffin.
+You pay the baker, who puts your croissant into a bag,		You pay the baker, who puts your croissant into a bag,
+and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
+
+
+What would you like to do?					What would you like to do?
+
+ 1. Leave the store						 1. Leave the store
+As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
+You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
+and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
+east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
+
+What would you like to do?					What would you like to do?
+
+ 1. Go east, out of town					 1. Go east, out of town
+ 2. Go west, into town						 2. Go west, into town
+As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
+something large flies over your head.				something large flies over your head.
+
+What would you like to do?					What would you like to do?
+
+ 1. Jump off the road and hide behind a large rock		 1. Jump off the road and hide behind a large rock
+ 2. Keep walking						 2. Keep walking
+Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
+down and landed on the road right where you just were.		down and landed on the road right where you just were.
+The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
+
+What would you like to do?					What would you like to do?
+
+ 1. <UNAVAILABLE>					      |	 1. Offer the dragon your last coins.
+ 2. <UNAVAILABLE>						 2. <UNAVAILABLE>
+ 3. Offer the dragon the chocolate croissant.			 3. Offer the dragon the chocolate croissant.
+ 4. <UNAVAILABLE>						 4. <UNAVAILABLE>
+ 5. <UNAVAILABLE>						 5. <UNAVAILABLE>
+ 6. Ask the dragon if he has heard any good jokes lately.	 6. Ask the dragon if he has heard any good jokes lately.
+"Oh thank you this looks delicious!" the dragon says		"Oh thank you this looks delicious!" the dragon says
+as he devours the pastry.   "I was so hungry I couldn't		as he devours the pastry.   "I was so hungry I couldn't
+think straight and was about to eat you!  How terrible		think straight and was about to eat you!  How terrible
+would that have been."						would that have been."
+
+Having solved the dragon's hunger problems, he is happy		Having solved the dragon's hunger problems, he is happy
+to give you a ride back to your house.  Everyone lives		to give you a ride back to your house.  Everyone lives
+happily ever after.						happily ever after.
+
+Congratulations! You have won. Hooray!				Congratulations! You have won. Hooray!
+Your file did not match the expected output
+
+Step 4 EC intermediate deadline test 2
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input10.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 3
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input11.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 4
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input12.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 5
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input13.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 6
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input14.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 7
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input15.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 8
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input16.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 9
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input17.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 10
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input18.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 11
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input19.txt
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
+your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
+
+"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
+have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
+one, but choosing is so hard.					one, but choosing is so hard.
+
+What would you like to do?					What would you like to do?
+
+ 1. Purchase a chocolate croissant.				 1. Purchase a chocolate croissant.
+ 2. Purchase an eclair.						 2. Purchase an eclair.
+ 3. Purchase a muffin.						 3. Purchase a muffin.
+You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
+and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
+
+
+What would you like to do?					What would you like to do?
+
+ 1. Leave the store						 1. Leave the store
+As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
+You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
+and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
+east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
+
+What would you like to do?					What would you like to do?
+
+ 1. Go east, out of town					 1. Go east, out of town
+ 2. Go west, into town						 2. Go west, into town
+As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
+something large flies over your head.				something large flies over your head.
+
+What would you like to do?					What would you like to do?
+
+ 1. Jump off the road and hide behind a large rock		 1. Jump off the road and hide behind a large rock
+ 2. Keep walking						 2. Keep walking
+Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
+down and landed on the road right where you just were.		down and landed on the road right where you just were.
+The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
+
+What would you like to do?					What would you like to do?
+
+ 1. <UNAVAILABLE>					      |	 1. Offer the dragon your last coins.
+ 2. <UNAVAILABLE>						 2. <UNAVAILABLE>
+ 3. <UNAVAILABLE>						 3. <UNAVAILABLE>
+ 4. <UNAVAILABLE>						 4. <UNAVAILABLE>
+ 5. Throw the muffin at the dragon's nose and run for it!	 5. Throw the muffin at the dragon's nose and run for it!
+ 6. Ask the dragon if he has heard any good jokes lately.	 6. Ask the dragon if he has heard any good jokes lately.
+As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
+his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
+eats you for breakfast.						eats you for breakfast.
+
+Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
+
+Step 4 EC intermediate deadline test 12
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input1.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 13
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input20.txt
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
+your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
+
+"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
+have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
+one, but choosing is so hard.					one, but choosing is so hard.
+
+What would you like to do?					What would you like to do?
+
+ 1. Purchase a chocolate croissant.				 1. Purchase a chocolate croissant.
+ 2. Purchase an eclair.						 2. Purchase an eclair.
+ 3. Purchase a muffin.						 3. Purchase a muffin.
+You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
+and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
+
+
+What would you like to do?					What would you like to do?
+
+ 1. Leave the store						 1. Leave the store
+As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
+You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
+and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
+east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
+
+What would you like to do?					What would you like to do?
+
+ 1. Go east, out of town					 1. Go east, out of town
+ 2. Go west, into town						 2. Go west, into town
+As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
+something large flies over your head.				something large flies over your head.
+
+What would you like to do?					What would you like to do?
+
+ 1. Jump off the road and hide behind a large rock		 1. Jump off the road and hide behind a large rock
+ 2. Keep walking						 2. Keep walking
+Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
+down and landed on the road right where you just were.		down and landed on the road right where you just were.
+The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
+
+What would you like to do?					What would you like to do?
+
+ 1. <UNAVAILABLE>					      |	 1. Offer the dragon your last coins.
+ 2. <UNAVAILABLE>						 2. <UNAVAILABLE>
+ 3. <UNAVAILABLE>						 3. <UNAVAILABLE>
+ 4. <UNAVAILABLE>						 4. <UNAVAILABLE>
+ 5. Throw the muffin at the dragon's nose and run for it!	 5. Throw the muffin at the dragon's nose and run for it!
+ 6. Ask the dragon if he has heard any good jokes lately.	 6. Ask the dragon if he has heard any good jokes lately.
+That choice is not available at this time, please try again	That choice is not available at this time, please try again
+That choice is not available at this time, please try again	That choice is not available at this time, please try again
+As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
+his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
+eats you for breakfast.						eats you for breakfast.
+
+Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
+
+Step 4 EC intermediate deadline test 14
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input21.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 15
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input22.txt
+Your output differs from ours.
+Below is the diff (yours left/ours right)
+As you bask in the morning light pouring through the bakery w	As you bask in the morning light pouring through the bakery w
+your breath is taken away by the stunning display of pastries	your breath is taken away by the stunning display of pastries
+
+"What would you like?" The shop keeper ask cheerily.  Realizi	"What would you like?" The shop keeper ask cheerily.  Realizi
+have a long journey ahead of you, you decide it is best to or	have a long journey ahead of you, you decide it is best to or
+one, but choosing is so hard.					one, but choosing is so hard.
+
+What would you like to do?					What would you like to do?
+
+ 1. Purchase a chocolate croissant.				 1. Purchase a chocolate croissant.
+ 2. Purchase an eclair.						 2. Purchase an eclair.
+ 3. Purchase a muffin.						 3. Purchase a muffin.
+You pay the baker, who puts your muffin into a bag,		You pay the baker, who puts your muffin into a bag,
+and hands it to you.  He wishes you a good day.			and hands it to you.  He wishes you a good day.
+
+
+What would you like to do?					What would you like to do?
+
+ 1. Leave the store						 1. Leave the store
+As you leave the store, something feels...strange about the m	As you leave the store, something feels...strange about the m
+You aren't quite sure what, but you sense that something unus	You aren't quite sure what, but you sense that something unus
+and strange is about to happen.  The street in front of you r	and strange is about to happen.  The street in front of you r
+east, out of town, or west deeper into town.  			east, out of town, or west deeper into town.  
+
+What would you like to do?					What would you like to do?
+
+ 1. Go east, out of town					 1. Go east, out of town
+ 2. Go west, into town						 2. Go west, into town
+As you wander through town, you notice the blacksmith working	As you wander through town, you notice the blacksmith working
+shiny, glowing sword.  He looks up from his work and says	shiny, glowing sword.  He looks up from his work and says
+"You look like the sort of hero who might need a sword?		"You look like the sort of hero who might need a sword?
+Strange things in the air, can't go wrong with a sword.."	Strange things in the air, can't go wrong with a sword.."
+Checking your pockets, you find a few coins left after		Checking your pockets, you find a few coins left after
+your pastry purchase, but you would be broke if your		your pastry purchase, but you would be broke if your
+spent your money on the sword.					spent your money on the sword.
+
+What would you like to do?					What would you like to do?
+
+ 1. Buy the sword						 1. Buy the sword
+ 2. Decline and head out of town				 2. Decline and head out of town
+As you head out of town, you notice a shadow pass over you as	As you head out of town, you notice a shadow pass over you as
+something large flies over your head.				something large flies over your head.
+
+What would you like to do?					What would you like to do?
+
+ 1. Jump off the road and hide behind a large rock		 1. Jump off the road and hide behind a large rock
+ 2. Keep walking						 2. Keep walking
+Good thing you jumped behind a rock!  A large dragon swooped	Good thing you jumped behind a rock!  A large dragon swooped
+down and landed on the road right where you just were.		down and landed on the road right where you just were.
+The dragon looks hungry and ferocious...			The dragon looks hungry and ferocious...
+
+What would you like to do?					What would you like to do?
+
+ 1. <UNAVAILABLE>					      |	 1. Offer the dragon your last coins.
+ 2. <UNAVAILABLE>						 2. <UNAVAILABLE>
+ 3. <UNAVAILABLE>						 3. <UNAVAILABLE>
+ 4. <UNAVAILABLE>						 4. <UNAVAILABLE>
+ 5. Throw the muffin at the dragon's nose and run for it!	 5. Throw the muffin at the dragon's nose and run for it!
+ 6. Ask the dragon if he has heard any good jokes lately.	 6. Ask the dragon if he has heard any good jokes lately.
+That choice is not available at this time, please try again	That choice is not available at this time, please try again
+That choice is not available at this time, please try again	That choice is not available at this time, please try again
+As you throw the muffin at the dragon, it harmlessly bounces 	As you throw the muffin at the dragon, it harmlessly bounces 
+his thick scales.  You wonder what you were thinking as the d	his thick scales.  You wonder what you were thinking as the d
+eats you for breakfast.						eats you for breakfast.
+
+Sorry, you have lost. Better luck next time!			Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
+
+Step 4 EC intermediate deadline test 16
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input23.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 17
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input24.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 18
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input25.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 19
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input2.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 20
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input3.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 21
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input4.txt
+  - Valgrind was clean (no errors, no memory leaks)
+Valgrind was clean for this testcase
+You have passed this test case
+
+Step 4 EC intermediate deadline test 22
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input5.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 23
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input6.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 24
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input7.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 25
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input8.txt
+You indicated this was a failure, but it was not
+
+Step 4 EC intermediate deadline test 26
+===========================================================
+./cyoa-step4 /usr/local/ece551/cyoa/story3 < /usr/local/ece551/cyoa/story3/inputs/input9.txt
+You indicated this was a failure, but it was not
+
+It looks like you did not provide any test cases
 
 Overall Grade: NO GRADE YET
