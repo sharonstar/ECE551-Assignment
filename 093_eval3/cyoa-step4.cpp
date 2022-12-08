@@ -9,7 +9,7 @@ int main(int argc, char * argv[]) {
   char * direname = argv[1];
   Story storyObject;
   storyObject.buildStory(direname);
-  //  storyObject.checkValidity();
+  storyObject.checkValidity();
   storyObject.displayPages();
   return EXIT_SUCCESS;
 }

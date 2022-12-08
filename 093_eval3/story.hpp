@@ -3,8 +3,6 @@
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
-#include <fstream>
-#include <iostream>
 #include <vector>
 
 #include "page.hpp"
@@ -13,9 +11,123 @@ class Story {
  public:
   std::vector<Page> pages;
   int numPages;
+  std::map<std::string, long int> variablePath;
   // constructor
   Story() : pages(std::vector<Page>()), numPages(0){};
-  //step1: read story.txt, set navigation, nextPage, type, num for each Page
+
+  // helper funtions for step1,2,4
+  // process page declaration lines
+  void pageDelaration(std::string & line, std::string directoryName) {
+    Page pageObject;
+    char * end0;
+    long numofPage;
+    numofPage = std::strtol(line.c_str(), &end0, 10);
+    if (end0[0] != '@' || end0 == line.c_str()) {
+      std::cerr << "Invalid page number" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    if (numofPage < 0) {
+      std::cerr << "Page number is negative" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    pageObject.num = numofPage;
+    if (end0[1] == 'N') {
+      pageObject.type = 0;
+    }
+    else if (end0[1] == 'W') {
+      pageObject.type = 1;
+    }
+    else if (end0[1] == 'L') {
+      pageObject.type = 2;
+    }
+    else if (end0[1] != 'N' || end0[1] != 'W' || end0[1] != 'L') {
+      std::cerr << "Invalid page type" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    if (end0[2] != ':') {
+      std::cerr << "There is not : after page type " << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    end0 += 3;
+    char * end1 = std::strchr(end0, '.');
+    if (strcmp(end1, ".txt") != 0) {
+      std::cerr << "Invalid pagefile name" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    pageObject.name = end0;
+    pageObject.readPageContent(directoryName);
+    pages.push_back(pageObject);
+    numPages++;
+  }
+  // process variable declaration lines
+  void pageVariable(std::string & line) {
+    char * end0;
+    char * end1;
+    long pagenum, value;
+    pagenum = std::strtol(line.c_str(), &end0, 10);
+    if (pagenum >= numPages) {
+      std::cerr << "Page has not been declaration" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    std::string::size_type pos1 = line.find('$') + 1;
+    std::string::size_type pos2 = line.find('=');
+    if (pos2 == std::string::npos) {
+      std::cerr << "Invalid variable declaration(doesn't have =)" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    value = std::strtol(line.substr(pos2 + 1).c_str(), &end1, 10);
+    if (end1 == line.substr(pos2 + 1).c_str() || end1[0] != '\0') {
+      std::cerr << "Invalid variable value" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    pages[pagenum].variable[line.substr(pos1, pos2 - pos1)] = value;
+    //std::cout << line.substr(pos1, pos2 - pos1) << std::endl;
+  }
+  // process navigation lines
+  void pageNavigation(std::string & line) {
+    char * end0;
+    char * end1;
+    char * end2;
+    char * end3;
+    long pagenum, pageref, value;
+    pagenum = std::strtol(line.c_str(), &end0, 10);
+    if (pagenum >= numPages) {
+      std::cerr << "Page has not been declaration" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    if (end0[0] == '[') {
+      std::string::size_type pos1 = std::string(end0).find('=');
+      if (pos1 == std::string::npos) {
+        std::cerr << "Invalid condition(doesn't have =)" << std::endl;
+        exit(EXIT_FAILURE);
+      }
+      value = std::strtol(end0 + pos1 + 1, &end2, 10);
+      if (end2 == std::string(end0).substr(pos1 + 1).c_str() || end2[0] != ']') {
+        std::cerr << "Invalid condition(variable's value is invalid)" << std::endl;
+        exit(EXIT_FAILURE);
+      }
+      std::pair<std::string, long int> conPair(std::string(end0).substr(1, pos1 - 1),
+                                               value);
+      pages[pagenum].conditions.push_back(conPair);
+      end3 = end2 + 2;
+      //std::cout << conPair.first << conPair.second << std::endl;
+    }
+    else {
+      pages[pagenum].conditions.push_back(std::pair<std::string, long int>());
+      end3 = end0 + 1;
+    }
+    pageref = std::strtol(end3, &end1, 10);
+    //std::cout << pageref << std::endl;
+    if (end1[0] != ':') {
+      std::cerr << "Page reference is not an invalid integer" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    pages[pagenum].nextPage.push_back(pageref);
+    end1++;
+    pages[pagenum].navigation.push_back(end1);
+  }
+
+  // step1: read story.txt, set navigation, nextPage, type, num for each Page
   void readStory(std::ifstream & story, std::string directoryName) {
     std::string line;
     while (std::getline(story, line)) {
@@ -23,48 +135,16 @@ class Story {
       if (line.size() == 0) {
         continue;
       }
-      // process page declaration lines
-      if (line.find("@") != std::string::npos) {
-        Page pageObject;
-        char * end0;
-        long numofPage;
-        numofPage = std::strtol(line.c_str(), &end0, 10);
-        if (end0[0] != '@' || end0 == line.c_str()) {
-          std::cerr << "Invalid page number" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        if (numofPage < 0) {
-          std::cerr << "Page number is negative" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        pageObject.num = numofPage;
-        if (end0[1] == 'N') {
-          pageObject.type = 0;
-        }
-        else if (end0[1] == 'W') {
-          pageObject.type = 1;
-        }
-        else if (end0[1] == 'L') {
-          pageObject.type = 2;
-        }
-        else if (end0[1] != 'N' || end0[1] != 'W' || end0[1] != 'L') {
-          std::cerr << "Invalid page type" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        if (end0[2] != ':') {
-          std::cerr << "There is not : after page type " << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        end0 += 3;
-        char * end1 = std::strchr(end0, '.');
-        if (strcmp(end1, ".txt") != 0) {
-          std::cerr << "Invalid pagefile name" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        pageObject.name = end0;
-        pageObject.readPageContent(directoryName);
-        pages.push_back(pageObject);
-        numPages++;
+      // check which type the line is
+      char * end;
+      std::strtol(line.c_str(), &end, 10);
+      if (end == line.c_str()) {
+        std::cerr << "The first one is not a number" << std::endl;
+        exit(EXIT_FAILURE);
+      }
+      if (end[0] == '@') {  // process page declaration lines
+        pageDelaration(line, directoryName);
+        // check if page declaration appears in order
         for (size_t i = 0; (int)i < numPages; i++) {
           if (pages[i].num != i) {
             std::cerr << "Page declaration is not in order" << std::endl;
@@ -72,29 +152,15 @@ class Story {
           }
         }
       }
+      else if (end[0] == ':' || end[0] == '[') {  // process navigation lines
+        pageNavigation(line);
+      }
+      else if (end[0] == '$') {  // process variable declaration lines
+        pageVariable(line);
+      }
       else {
-        // process navigation lines
-        char * end0;
-        char * end1;
-        long pagenum, pageref;
-        pagenum = std::strtol(line.c_str(), &end0, 10);
-        if (end0 == line.c_str() || end0[0] != ':') {
-          std::cerr << "Invalid page number of reference" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        if (pagenum >= numPages) {
-          std::cerr << "Page has not been declaration" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        end0++;
-        pageref = std::strtol(end0, &end1, 10);
-        if (end1[0] != ':') {
-          std::cerr << "Page reference is not an invalid integer" << std::endl;
-          exit(EXIT_FAILURE);
-        }
-        pages[pagenum].nextPage.push_back(pageref);
-        end1++;
-        pages[pagenum].navigation.push_back(end1);
+        std::cerr << "Lines don't belong to any type" << std::endl;
+        exit(EXIT_FAILURE);
       }
     }
     // check win and lose page should not have navigation lines
@@ -125,10 +191,11 @@ class Story {
   }
   //step1: print story
   void printStory() {
+    std::vector<int> unavilableIndex;
     for (int i = 0; i < numPages; i++) {
       std::cout << "Page " << pages[i].num << std::endl;
       std::cout << "==========" << std::endl;
-      pages[i].printPage();
+      pages[i].printPage(variablePath, unavilableIndex);
     }
   }
   // step2.3: verify whether myStory confirms these conditions
@@ -166,34 +233,43 @@ class Story {
   // step2.4: display each page according to navigation lines
   void displayPages() {
     int curr = 0;
+    std::vector<int> unavilableIndex;
     while (true) {
-      pages[curr].printPage();
-      curr = navigateNextPage(curr);
+      if (pages[curr].variable.size() != 0) {
+        variablePath.insert(pages[curr].variable.begin(), pages[curr].variable.end());
+      }
+      pages[curr].printPage(variablePath, unavilableIndex);
+      curr = navigateNextPage(curr, unavilableIndex);
       if (curr == -1) {
         return;
       }
     }
   }
-  int navigateNextPage(int curr) {
+  int navigateNextPage(int curr, std::vector<int> & unavilableIndex) {
     if (pages[curr].type != 0) {
       return -1;
     }
     // check whether input number is valid
-    std::vector<size_t> vec = pages[curr].nextPage;
     int input;
     std::cin >> input;
-    while (!std::cin.good() || input < 1 || input > (int)pages[curr].nextPage.size()) {
+    while (!std::cin.good() || input < 1 || input > (int)pages[curr].nextPage.size() ||
+           std::count(unavilableIndex.begin(), unavilableIndex.end(), input) > 0) {
       if (!std::cin.good()) {
         std::cin.clear();
         std::string badinput;
         std::cin >> badinput;
       }
-      std::cout << "That is not a valid choice, please try again" << std::endl;
+      if (std::count(unavilableIndex.begin(), unavilableIndex.end(), input) > 0) {
+        std::cout << "That choice is not available at this time, please try again"
+                  << std::endl;
+      }
+      else {
+        std::cout << "That is not a valid choice, please try again" << std::endl;
+      }
       std::cin >> input;
     }
-    return (int)pages[curr].nextPage[input - 1];
+    return (int)pages[curr].nextPage[(int)input - 1];
   }
-
   // step3: find all possible paths to win
   void backtrack() {
     std::vector<Page> path;
