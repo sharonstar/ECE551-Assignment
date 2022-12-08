@@ -109,14 +109,12 @@ class Story {
                                                value);
       pages[pagenum].conditions.push_back(conPair);
       end3 = end2 + 2;
-      //std::cout << conPair.first << conPair.second << std::endl;
     }
     else {
       pages[pagenum].conditions.push_back(std::pair<std::string, long int>());
       end3 = end0 + 1;
     }
     pageref = std::strtol(end3, &end1, 10);
-    //std::cout << pageref << std::endl;
     if (end1[0] != ':') {
       std::cerr << "Page reference is not an invalid integer" << std::endl;
       exit(EXIT_FAILURE);
