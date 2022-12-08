@@ -1,16 +1,15 @@
-all : cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4 
-cyoa-step1: cyoa-step1.cpp
-	g++ -o cyoa-step1 cyoa-step1.cpp
+CFLAGS=-std=gnu++98 -pedantic -Wall -Werror -ggdb3
+PROGS=cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4                                                                                          
+OBJS=$(patsubst %,%.o,$(PROGS)) page.o story.o
+all: $(PROGS)
+cyoa-step%: cyoa-step%.o page.o story.o
+	g++ -o $@ $^
+%.o: %.cpp
+	g++ $(CFLAGS) -c $<
 
-cyoa-step2: cyoa-step2.cpp
-	g++ -o cyoa-step2 cyoa-step2.cpp
-
-cyoa-step3: cyoa-step3.cpp
-	g++ -o cyoa-step3 cyoa-step3.cpp
-
-cyoa-step4: cyoa-step4.cpp
-	g++ -o cyoa-step4 cyoa-step4.cpp
-
-.PHONY: clean
+PHONY: clean
 clean:
-	rm -f cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4
+	rm -f *~ $(PROGS) $(OBJS)
+
+page.o: page.hpp
+story.o: story.hpp
