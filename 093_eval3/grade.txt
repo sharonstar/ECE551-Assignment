@@ -1,6 +1,6 @@
-Grading at 12/09/2022:20:51:59.850476
-For commit ID f63205e9913f5938c26c16a4ef0e6b410c181600
-Grading at Fri Dec  9 03:51:46 PM EST 2022
+Grading at 12/09/2022:20:57:39.517338
+For commit ID 1c1f0db8afdae95587337c3021e17197d9f9b1be
+Grading at Fri Dec  9 03:57:30 PM EST 2022
 Doing some basic checking for your submission
 
 Step 1
@@ -31,16 +31,6 @@ Executable cyoa-step2 exists (good)
 ------------------------------------
 Now running YOUR tests for step 2
 ------------------------------------
-
-
-2.1: Current test is ./cyoa-step2 story1  <  input.txt
------------------------------
-Great: we both considered this an error
-----here is what you printed on stderr---
-Can't open file: story.txt
------------------------------------------
-Lets check if it valgrinds:
-Valgrind was clean
 No request to check for intermediate deadline completion on step 2
 
 Step 3
@@ -73,8 +63,6 @@ Now running YOUR tests for step 4
 ------------------------------------
 No request to check for intermediate deadline completion on step 4
 
-You have passed the test cases YOU provided
-If your tests are good, this is great. 
-If your tests are insufficient, you should do much more testing
+It looks like you did not provide any test cases
 
 Overall Grade: NO GRADE YET
