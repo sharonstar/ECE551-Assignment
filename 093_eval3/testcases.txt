@@ -1,1 +1,1 @@
-./cyoa-step2 story1  <  ./input.txt
+./cyoa-step2 /usr/local/ece551/cyoa/story1  <  ./input.txt
