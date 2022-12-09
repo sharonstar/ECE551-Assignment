@@ -1,2 +1,6 @@
 0@N:page.txt
-0 4:9:choice1 
+1@W:page.txt
+2@L:page.txt
+0:1: Win Path 1
+0:1: Win Path 2
+0:2: Lose Path

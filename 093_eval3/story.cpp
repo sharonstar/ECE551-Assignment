@@ -161,7 +161,7 @@ void Story::readStory(std::ifstream & story, std::string directoryName) {
     it++;
   }
 }
-//step1: read a directory, build Story
+// step1: read a directory, build Story
 void Story::buildStory(std::string directoryName) {
   std::string story = directoryName + "/story.txt";
   std::ifstream inputFile;
@@ -175,7 +175,7 @@ void Story::buildStory(std::string directoryName) {
     exit(EXIT_FAILURE);
   }
 }
-//step1: print story
+// step1: print story
 void Story::printStory() {
   std::vector<int> unavilableIndex;
   for (int i = 0; i < numPages; i++) {
@@ -219,19 +219,23 @@ void Story::checkValidity() {
 // step2.4: display each page according to navigation lines
 void Story::displayPages() {
   int curr = 0;
-  std::vector<int> unavilableIndex;
+  std::vector<int> unavailableIndex;
   while (true) {
     if (pages[curr].variable.size() != 0) {
-      variablePath.insert(pages[curr].variable.begin(), pages[curr].variable.end());
+      std::map<std::string, long int>::iterator it = pages[curr].variable.begin();
+      while (it != pages[curr].variable.end()) {
+        variablePath[it->first] = it->second;
+        it++;
+      }
     }
-    pages[curr].printPage(variablePath, unavilableIndex);
-    curr = navigateNextPage(curr, unavilableIndex);
+    pages[curr].printPage(variablePath, unavailableIndex);
+    curr = navigateNextPage(curr, unavailableIndex);
     if (curr == -1) {
       return;
     }
   }
 }
-int Story::navigateNextPage(int curr, std::vector<int> & unavilableIndex) {
+int Story::navigateNextPage(int curr, std::vector<int> & unavailableIndex) {
   if (pages[curr].type != 0) {
     return -1;
   }
@@ -239,13 +243,14 @@ int Story::navigateNextPage(int curr, std::vector<int> & unavilableIndex) {
   int input;
   std::cin >> input;
   while (!std::cin.good() || input < 1 || input > (int)pages[curr].nextPage.size() ||
-         std::count(unavilableIndex.begin(), unavilableIndex.end(), input) > 0) {
+         std::count(unavailableIndex.begin(), unavailableIndex.end(), input) > 0) {
     if (!std::cin.good()) {
       std::cin.clear();
       std::string badinput;
       std::cin >> badinput;
     }
-    if (std::count(unavilableIndex.begin(), unavilableIndex.end(), input) > 0) {
+    // check whether input is in unavailableIndex
+    if (std::count(unavailableIndex.begin(), unavailableIndex.end(), input) > 0) {
       std::cout << "That choice is not available at this time, please try again"
                 << std::endl;
     }
@@ -260,9 +265,11 @@ int Story::navigateNextPage(int curr, std::vector<int> & unavilableIndex) {
 void Story::backtrack() {
   std::vector<Page> path;
   std::vector<int> index;
+  // check whether print win path repetitively
+  std::vector<std::vector<Page> > winpath;
   int flagwin = 0;
   path.push_back(pages[0]);
-  backtrackHelper(path, index, &flagwin);
+  backtrackHelper(path, index, &flagwin, winpath);
   if (flagwin == 0) {
     std::cout << "This story is unwinnable!" << std::endl;
   }
@@ -270,13 +277,13 @@ void Story::backtrack() {
 // backtracking helper function
 void Story::backtrackHelper(std::vector<Page> & path,
                             std::vector<int> & index,
-                            int * flagwin) {
+                            int * flagwin,
+                            std::vector<std::vector<Page> > & winpath) {
   if (path.back().type == 1) {
-    for (int i = 0; i < (int)path.size() - 1; i++) {
-      std::cout << path[i].num << "(" << index[i] + 1 << "),";
-    }
-    std::cout << path.back().num << "(win)" << std::endl;
+    // set flag when reach a win page
     *flagwin = 1;
+    printPath(winpath, path, index);
+    winpath.push_back(path);
   }
   else {
     for (int i = 0; i < (int)path.back().nextPage.size(); i++) {
@@ -293,9 +300,33 @@ void Story::backtrackHelper(std::vector<Page> & path,
       }
       path.push_back(pages[(int)path.back().nextPage[i]]);
       index.push_back(i);
-      backtrackHelper(path, index, flagwin);
+      backtrackHelper(path, index, flagwin, winpath);
       path.pop_back();
       index.pop_back();
+    }
+  }
+}
+// Function to print a path
+void Story::printPath(std::vector<std::vector<Page> > & winpath,
+                      std::vector<Page> & path,
+                      std::vector<int> & index) {
+  if (winpath.size() == 0) {
+    for (int i = 0; i < (int)path.size() - 1; i++) {
+      std::cout << path[i].num << "(" << index[i] + 1 << "),";
+    }
+    std::cout << path.back().num << "(win)" << std::endl;
+  }
+  // check whether a path is already in winpath
+  for (int i = 0; i < (int)winpath.size(); i++) {
+    if (winpath[i] == path) {
+      break;
+    }
+    else {
+      for (int i = 0; i < (int)path.size() - 1; i++) {
+        std::cout << path[i].num << "(" << index[i] + 1 << "),";
+      }
+      std::cout << path.back().num << "(win)" << std::endl;
+      return;
     }
   }
 }

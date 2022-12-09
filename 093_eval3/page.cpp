@@ -1,5 +1,7 @@
 #include "page.hpp"
-
+bool operator==(const Page & lhs, const Page & rhs) {
+  return lhs.num == rhs.num;
+}
 void Page::readPageContent(std::string directoryName) {
   std::string path = directoryName + "/" + name;
   std::ifstream inputFile;
@@ -14,15 +16,15 @@ void Page::readPageContent(std::string directoryName) {
     contents.push_back(line);
   }
 }
-
 void Page::printPage(std::map<std::string, long int> variablePath,
-                     std::vector<int> & unavilableIndex) {
+                     std::vector<int> & unavailableIndex) {
   std::vector<std::string>::const_iterator it = contents.begin();
-  unavilableIndex.clear();
+  unavailableIndex.clear();
   while (it != contents.end()) {
     std::cout << *it << std::endl;
     it++;
   }
+  // normal type page: print navigation lines
   if (type == 0) {
     std::cout << "What would you like to do?" << std::endl;
     std::cout << std::endl;
@@ -37,7 +39,7 @@ void Page::printPage(std::map<std::string, long int> variablePath,
       else {
         std::cout << " " << i + 1 << ". "
                   << "<UNAVAILABLE>" << std::endl;
-        unavilableIndex.push_back(i + 1);
+        unavailableIndex.push_back(i + 1);
       }
     }
   }
